@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#390c00",
+                    "tertiary-container": "#3f0e00",
+                    "on-background": "#1d1b16",
+                    "on-surface-variant": "#4f453f",
+                    "on-primary-fixed-variant": "#5b4131",
+                    "outline": "#81756e",
+                    "surface-container-high": "#ede7de",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f9f3ea",
+                    "surface-variant": "#e7e2d9",
+                    "on-tertiary-container": "#d7653c",
+                    "secondary": "#815500",
+                    "outline-variant": "#d3c3bb",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#feb234",
+                    "surface": "#fff9ef",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#745847",
+                    "on-surface": "#1d1b16",
+                    "surface-container": "#f3ede4",
+                    "secondary-fixed-dim": "#ffb94c",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fff9ef",
+                    "inverse-primary": "#e4bfa9",
+                    "on-secondary-fixed": "#291800",
+                    "on-secondary-container": "#6d4700",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "secondary-fixed": "#ffddb2",
+                    "on-secondary-fixed-variant": "#624000",
+                    "surface-container-highest": "#e7e2d9",
+                    "on-tertiary-fixed-variant": "#822702",
+                    "tertiary": "#140200",
+                    "inverse-on-surface": "#f6f0e7",
+                    "surface-dim": "#dfd9d1",
+                    "primary-fixed": "#ffdcc7",
+                    "primary-container": "#2e1a0c",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#2a1709",
+                    "on-primary-container": "#a0806c",
+                    "primary-fixed-dim": "#e4bfa9",
+                    "tertiary-fixed": "#ffdbd0",
+                    "primary": "#0f0300",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#32302a",
+                    "background": "#fff9ef"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "section-gap-mobile": "64px",
+                    "margin-desktop": "48px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "section-gap-desktop": "120px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Playfair Display"],
+                    "button": ["DM Sans"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["DM Sans"],
+                    "body-md": ["DM Sans"],
+                    "headline-md": ["Playfair Display"],
+                    "label-md": ["DM Sans"],
+                    "display-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-sm": ["1.5rem", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "button": ["1rem", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["2.25rem", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["3rem", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["1rem", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["2rem", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "label-md": ["0.875rem", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["4.5rem", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .linen-card {
+            background-color: #F5EFE6;
+            border: 1px solid #D9C9B8;
+        }
+        .grain-overlay::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant/30 dark:border-outline/20 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface dark:text-inverse-on-surface">
+                Crown Harvest
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary font-label-md text-label-md" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary transition-colors font-label-md text-label-md" href="#">Services</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary transition-colors font-label-md text-label-md" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary transition-colors font-label-md text-label-md" href="#">Contact Us</a>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-full font-button text-button hover:scale-95 transition-transform duration-150">
+                Become a Customer
+            </button>
+</div>
+</nav>
+<!-- Header Section -->
+<header class="py-section-gap-desktop px-margin-desktop max-w-container-max mx-auto text-center md:text-left">
+<nav class="flex items-center gap-2 mb-6 font-label-md text-label-md text-on-surface-variant">
+<a class="hover:text-secondary" href="#">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-secondary font-bold">Products</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg mb-4 text-primary">Our Produce</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Fresh from farm to your door — quality you can taste. Our curated selection of wholesale and retail agricultural products represent the pinnacle of seasonal harvest.
+        </p>
+</header>
+<!-- Categories Grid -->
+<section class="pb-section-gap-desktop px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Fresh Fruits -->
+<div class="linen-card rounded-lg overflow-hidden group hover:shadow-lg transition-all duration-300">
+<div class="h-72 overflow-hidden relative grain-overlay">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A lush, vibrant assortment of seasonal fruits like ripe apples, berries, and citrus arranged artistically on a rustic wooden surface. The lighting is warm and natural, suggesting early morning golden hour in an orchard setting. The style is premium editorial photography with a subtle warm tint to match a luxury artisanal harvest aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO4vtxW5e4OKHnPS5dEPeGFEAbi3e9WfQ-lujuHebFqsSUmHWxVjNgj99uK-efSaDb3190-xLiYRH8EeOhYInd2x5acHPvLFYy4laJTDDcZ4u0j_Hp3HXrYj-w0OB7gE55TmilYUmBrJIImCp9411SlRMzLQzTusyVttQ4AQeLXPSBtOcL59tjQautX578gnNJoOfV1Ci-y_nYbkLwrnv0dRz9xUEkW8j_K9-De45Aop3SROtIqKuWaChKe9sXACs925gU9428umQ"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Fresh Fruits</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                        Hand-picked at peak ripeness from the finest orchards across the region.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Farm Fresh</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Seasonal</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Wholesale</span>
+</div>
+<button class="w-full border-1.5 border-outline-variant hover:bg-parchment py-4 rounded-full font-button text-button text-primary transition-all duration-200 border-[1.5px]">
+                        Request a Quote
+                    </button>
+</div>
+</div>
+<!-- Fresh Vegetables -->
+<div class="linen-card rounded-lg overflow-hidden group hover:shadow-lg transition-all duration-300">
+<div class="h-72 overflow-hidden relative grain-overlay">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Deep green leafy vegetables and earthy root vegetables like carrots and radishes, still glistening with fresh morning dew. The composition is structured and clean, set against a dark, artisanal clay background that emphasizes the vibrant natural colors. Cinematic high-contrast lighting creates an authoritative and high-end organic feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACik6wfCKeT5AudpUtBMaqERvc_dtN8jPCjcYnlmztNTeUDK8qTWzYEB9MUitROLyVrccYipSmCo3DA2lM9PuLNnjLiv79oErEQshactNwhR416psB3ZClSwxytpj_IAgZRClaLzewD6FG0PPY9nFjxS-BQIBhtWM7Xtf0v8e1f0oFn14k-2Wbu0YueH8hVuYp-D9ll4khZ0Xz8Qwy-PqLRLy6cen-tVXwqTAsvWlb8BNOsrYBz24GqVTWAePAaiayF2u3sZEAW9k"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Fresh Vegetables</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                        Nutritious, crisp, and ethically grown vegetables delivered within hours of harvest.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Farm Fresh</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Non-GMO</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Local</span>
+</div>
+<button class="w-full border-1.5 border-outline-variant hover:bg-parchment py-4 rounded-full font-button text-button text-primary transition-all duration-200 border-[1.5px]">
+                        Request a Quote
+                    </button>
+</div>
+</div>
+<!-- Organic Produce -->
+<div class="linen-card rounded-lg overflow-hidden group hover:shadow-lg transition-all duration-300">
+<div class="h-72 overflow-hidden relative grain-overlay">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A curated box of certified organic produce featuring heirloom tomatoes and artisanal greens. The photography style is high-end editorial, with soft shadows and a focus on the tactile textures of the organic skin and leaves. The color palette is earthy and sophisticated, using warm linen and sand tones to suggest premium provenance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbLLn2fKV1NGQ8dstgFnrCRKoS0o8UDZ2BmxlRQbTvLyFViXy1YRiD11zgxkRvWdWf67lIRT03SrAMyhJU2CyVQjXfLXI9LOkXCs2GqFE72fwvoyfzCaTfsRD_d8NKC5LwkfY3dWlKHIDjM-uh9l-mVqO--ucnGKtSdj0nf_c444o1irCEA-3KGWy5ljbWA88ISV5MPreFoq3W6ilXjVMHzkI0BqDsePu7LkqhCaPDbrVpA8LPyKGTXrY5AfSnovvH7ck9Skts0hc"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Organic Produce</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                        Certified pesticide-free produce for the health-conscious consumer and kitchen.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Certified</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Eco-Friendly</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Purity</span>
+</div>
+<button class="w-full border-1.5 border-outline-variant hover:bg-parchment py-4 rounded-full font-button text-button text-primary transition-all duration-200 border-[1.5px]">
+                        Request a Quote
+                    </button>
+</div>
+</div>
+<!-- Local Produce -->
+<div class="linen-card rounded-lg overflow-hidden group hover:shadow-lg transition-all duration-300">
+<div class="h-72 overflow-hidden relative grain-overlay">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up shot of a traditional local farmer's market stall with handwritten wooden signs and baskets of fresh corn and potatoes. The lighting is diffused and soft, creating an intimate, community-focused mood. The style is 'Corporate Modern with a Tactile twist', blending professional clarity with authentic agricultural heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPgjwWbz0yNqVF4ldX8ISGbKmkVkRSP1VxREosU6UMb0uW6X_Vethho1PomKXb36TujyDJ12FvSh23Lr3nTsZP2gBTJUkZISyCDoqEEslYNsYAK44GEICP7BE9qXzUAohQh-dHnb1TT9Z22I1xuTIQTYV9Sv7gkBtpvjYXq6BYjDDorQRPRXIAQi0dW4zuPw_VJJwIkIfpyHQzRej6usMfPZ9rGA4AoO5XFPNaHZ2QR11xg_2Jhh5sveDUUMsW0lW2b4LzdUVzSeY"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Local Produce</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                        Supporting our community growers with direct farm-to-table logistics.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Community</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Direct</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Fresh</span>
+</div>
+<button class="w-full border-1.5 border-outline-variant hover:bg-parchment py-4 rounded-full font-button text-button text-primary transition-all duration-200 border-[1.5px]">
+                        Request a Quote
+                    </button>
+</div>
+</div>
+<!-- Imported Produce -->
+<div class="linen-card rounded-lg overflow-hidden group hover:shadow-lg transition-all duration-300">
+<div class="h-72 overflow-hidden relative grain-overlay">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Exotic tropical fruits like dragonfruit and mangoes, presented in a minimalist, high-end gallery style. The background is a clean, warm white, and the fruits are highlighted with crisp, bright lighting that emphasizes their unique shapes and intense colors. The aesthetic is sophisticated and global, conveying a sense of premium quality and luxury provenance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcVfu7MoiUMtel8nPEUMXAbl97yTxsP7ZW0e7lgYPBJs3BEpG2aOmusx-ZIR2Ly4Rr5g_mjcfeZgsNYbtNX1ZfhejmMlQGGCxf-i2wnzWwNHeTCMDaZGzdbFLJ8muc1ui1S6ZQhSiONr71BI3Er2skwTYdUmgL8K1TPYTXLsrC0OCnNusCV2ywEdU8xN4VwY2aHgeV2MGDNFFzHxpTzX4kt7dQZ6r8_mhU8uN2DQER8LnSV0YkzS-j59F13LHBMg0qSOCK7sVx1Sk"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Imported Produce</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                        Premium international selections chosen for exceptional flavor and rarity.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Global</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Exotic</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Premium</span>
+</div>
+<button class="w-full border-1.5 border-outline-variant hover:bg-parchment py-4 rounded-full font-button text-button text-primary transition-all duration-200 border-[1.5px]">
+                        Request a Quote
+                    </button>
+</div>
+</div>
+<!-- Specialty & Ethnic -->
+<div class="linen-card rounded-lg overflow-hidden group hover:shadow-lg transition-all duration-300">
+<div class="h-72 overflow-hidden relative grain-overlay">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artisanal spice bundles and rare ethnic vegetables arranged in a visually dense, tactile composition. The mood is rich and authoritative, with deep espresso and terracotta tones in the background. The lighting is focused and moody, highlighting the craftsmanship behind these specialty items. It feels like a bespoke estate storefront's display." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1b73yT_BfpwlJaxKEfbx1mbO_o5kjAmCWv4Oz8ZAyYEIA7BtVJfafbmcAUTmtJQpGNxcaSy7pULgNgU_YEaBxPBcZhdK2UzmB604jTnM4nld7GrD8sR4o5P4UmC-eT9XZxv3YgRIqRC1YKk3uUYKC5bvLd1jdDNJeK29_G9RkHvbdZF7TIU7zm7wZZsUAdKpnNhSp_-ZRq94TbXn2YSfZAX1l5DLitsM2t2SjmtZwjXqL6RetZrw5yYkjDS2JXVA2RaVPF4mUAPc"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Specialty &amp; Ethnic</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                        Unique varieties and specialty items tailored for diverse culinary traditions.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Niche</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Flavor</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Bespoke</span>
+</div>
+<button class="w-full border-1.5 border-outline-variant hover:bg-parchment py-4 rounded-full font-button text-button text-primary transition-all duration-200 border-[1.5px]">
+                        Request a Quote
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Custom Order Banner -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-section-gap-desktop">
+<div class="h-px w-full bg-secondary-container mb-12"></div>
+<div class="relative bg-primary-container rounded-xl overflow-hidden p-12 md:p-24 text-center">
+<div class="absolute inset-0 opacity-20 grain-overlay pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-6">Need a custom order?</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-10">
+                    From bespoke packaging to recurring bulk deliveries, our team is ready to curate a solution that fits your specific business needs.
+                </p>
+<button class="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-full font-button text-button hover:scale-105 transition-transform duration-300">
+                    Contact Our Team
+                </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest w-full py-section-gap-desktop border-t border-secondary/20 dark:border-secondary-fixed/20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface dark:text-inverse-on-surface mb-6">
+                    Crown Harvest
+                </div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    Cultivating excellence from the soil to your table. Premium wholesale solutions for the modern culinary landscape.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="font-label-md text-label-md text-secondary dark:text-secondary-fixed font-bold mb-4">Quick Links</h4>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary underline transition-all" href="#">Products</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary underline transition-all" href="#">About Us</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary underline transition-all" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-secondary dark:text-secondary-fixed font-bold mb-4">Legal</h4>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary underline transition-all" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-secondary dark:text-secondary-fixed font-bold mb-4">Contact Info</h4>
+<address class="not-italic font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant">
+                    124 Harvest Lane<br/>
+                    Estate District, EH 4521<br/>
+<a class="hover:text-secondary transition-colors" href="mailto:hello@crownharvest.com">hello@crownharvest.com</a>
+</address>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-outline-variant/30 px-margin-desktop max-w-container-max mx-auto text-center font-label-md text-label-md text-on-surface-variant">
+            © 2024 Crown Harvest. All rights reserved.
+        </div>
+</footer>
+<script>
+        // Smooth scaling interaction for cards
+        document.querySelectorAll('.linen-card').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'scale(0.98)';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple Fade-in Observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.linen-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

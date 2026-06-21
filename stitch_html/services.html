@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | Crown Harvest</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#390c00",
+                    "tertiary-container": "#3f0e00",
+                    "on-background": "#1d1b16",
+                    "on-surface-variant": "#4f453f",
+                    "on-primary-fixed-variant": "#5b4131",
+                    "outline": "#81756e",
+                    "surface-container-high": "#ede7de",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f9f3ea",
+                    "surface-variant": "#e7e2d9",
+                    "on-tertiary-container": "#d7653c",
+                    "secondary": "#815500",
+                    "outline-variant": "#d3c3bb",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#feb234",
+                    "surface": "#fff9ef",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#745847",
+                    "on-surface": "#1d1b16",
+                    "surface-container": "#f3ede4",
+                    "secondary-fixed-dim": "#ffb94c",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fff9ef",
+                    "inverse-primary": "#e4bfa9",
+                    "on-secondary-fixed": "#291800",
+                    "on-secondary-container": "#6d4700",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "secondary-fixed": "#ffddb2",
+                    "on-secondary-fixed-variant": "#624000",
+                    "surface-container-highest": "#e7e2d9",
+                    "on-tertiary-fixed-variant": "#822702",
+                    "tertiary": "#140200",
+                    "inverse-on-surface": "#f6f0e7",
+                    "surface-dim": "#dfd9d1",
+                    "primary-fixed": "#ffdcc7",
+                    "primary-container": "#2e1a0c",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#2a1709",
+                    "on-primary-container": "#a0806c",
+                    "primary-fixed-dim": "#e4bfa9",
+                    "tertiary-fixed": "#ffdbd0",
+                    "primary": "#0f0300",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#32302a",
+                    "background": "#fff9ef"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "section-gap-mobile": "64px",
+                    "margin-desktop": "48px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "section-gap-desktop": "120px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Playfair Display"],
+                    "button": ["DM Sans"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["DM Sans"],
+                    "body-md": ["DM Sans"],
+                    "headline-md": ["Playfair Display"],
+                    "label-md": ["DM Sans"],
+                    "display-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-sm": ["1.5rem", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "button": ["1rem", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["2.25rem", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["3rem", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["1rem", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["2rem", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "label-md": ["0.875rem", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["4.5rem", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fff9ef; /* Warm White / Surface */
+            color: #1d1b16; /* On-Surface */
+            overflow-x: hidden;
+        }
+        .cinematic-grain::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .service-image-container {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #D9C9B8;
+            border-radius: 0.5rem;
+        }
+        .service-image-container img {
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-image-container:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant/30 dark:border-outline/20 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface dark:text-inverse-on-surface">
+                Crown Harvest
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary transition-colors font-label-md text-label-md" href="#">Products</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary font-label-md text-label-md" href="#">Services</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary transition-colors font-label-md text-label-md" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary transition-colors font-label-md text-label-md" href="#">Contact Us</a>
+</nav>
+<button class="bg-secondary text-on-secondary px-6 py-3 rounded-full font-button text-button hover:bg-secondary/90 active:scale-95 transition-all duration-200">
+                Become a Customer
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="py-section-gap-desktop px-margin-desktop max-w-container-max mx-auto text-center">
+<span class="font-label-md text-label-md text-secondary tracking-widest uppercase mb-4 block">Our Operations</span>
+<h1 class="font-headline-lg text-headline-lg mb-6">What We Do</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                End-to-end produce solutions for businesses of every size. We bridge the gap between global growers and local markets through artisanal precision.
+            </p>
+<div class="mt-12 h-px bg-secondary opacity-20 w-32 mx-auto"></div>
+</section>
+<!-- Services Alternating Blocks -->
+<section class="space-y-section-gap-desktop pb-section-gap-desktop">
+<!-- Service 1: Procurement -->
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="service-image-container aspect-[4/3] order-1 md:order-1">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-contrast shot of a professional produce buyer inspecting organic heritage tomatoes in a sun-drenched Italian marketplace. The lighting is warm and golden, casting soft shadows that highlight the textures of the crates and fresh vegetables. The overall aesthetic is grounded and premium, using a palette of deep greens, earthy reds, and warm wood tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLSC5kfifz6Er8rUmwHMlFm46vaV2KsUSeNy5W381losNdWDsdW-jTie7xdWSF8MKYehB9osuV2rjxjc_O6ZiDJcOJNU6iQQpkXef2ieP-BBg_u0sGBYcf3Sta3oe4UrSEJKYa_v6uB6lnXIE077yGOrDSLdlJul_MXEYlEBketh2skGlWedMxnCpCOvqsDWesamaa11ilnPSSmiQ97BlSCLTv9NQXy1F9A8BKyFMBbCs2P08_hlO3udXIRCoos4SydMcxX7wUxK0"/>
+</div>
+<div class="space-y-6 order-2 md:order-2 md:pl-12">
+<h2 class="font-headline-md text-headline-md">Procurement</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Our specialist buyers negotiate directly with farm gates, ensuring price stability and first-pick quality for every seasonal cycle. We manage the complexity so you don't have to.</p>
+<div class="flex items-center gap-4">
+<span class="text-display-lg font-display-lg text-secondary opacity-20">01</span>
+<div>
+<p class="font-label-md text-label-md text-secondary">METRIC</p>
+<p class="font-headline-sm text-headline-sm">98% Fulfillment Rate</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Service 2: Global Sourcing -->
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center bg-surface-container-low py-16">
+<div class="space-y-6 order-2 md:order-1 md:pr-12">
+<h2 class="font-headline-md text-headline-md">Global Sourcing</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Accessing exotic and staple produce from the world’s most fertile regions. We maintain strict ethical standards and provenance tracking across five continents.</p>
+<div class="flex items-center gap-4">
+<span class="text-display-lg font-display-lg text-secondary opacity-20">02</span>
+<div>
+<p class="font-label-md text-label-md text-secondary">REACH</p>
+<p class="font-headline-sm text-headline-sm">30+ Countries Sourced</p>
+</div>
+</div>
+</div>
+<div class="service-image-container aspect-[4/3] order-1 md:order-2">
+<img class="w-full h-full object-cover" data-alt="A wide-angle landscape photography of lush, rolling citrus groves in Spain during the blue hour. The horizon is glowing with a faint orange light, while the foreground trees are sharp and detailed. The visual style is editorial and artisanal, emphasizing the vast scale and natural beauty of global agricultural sourcing with a cool, sophisticated atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO0TL95Kud-bKFJ1UbLfopqDxXuEyqVrgjLsXb7gMkimIZOdZX1MWqIp85FeF1VGvogyVkN7wmOkH-f7Wnd2Q6v9r5JfLjhEQwx_w1C3C1NLr_S-aj1ejm0qVcbHHEqMXHRLeCDgt3dlhlpiF6Kj5ERCAOepMpowjrAjWOiyFrYXfJ7Cf2xRTT7LnyHQuXUZRSTPhYby0tZZKY16y8m6tdLFt2iDW62fsuomIIy8p1KB25hicPK15CVaFHlvHKnUwL2HOwhJHU49Q"/>
+</div>
+</div>
+<!-- Service 3: Distribution -->
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="service-image-container aspect-[4/3] order-1 md:order-1">
+<img class="w-full h-full object-cover" data-alt="A professional distribution hub with clean, modern trucks lined up against a minimalist architectural loading dock. The scene is shot in high-key morning light, creating a bright and efficient corporate modern feel. The color palette focuses on neutral linens, sands, and the crisp white of the logistics fleet, suggesting precision and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Gm4W-4ZvshG7iJ0UhNP2PF9e2j0Tzq4KzRcI23d7vQ8LijB0JmIkmrdvbYtZ55HBXTN5IOwGn1TpaWTYDXf7hbP_hElT4lslxi_8miAhYNH6BTxdcPztXVqw-SPKh84xy4GwLMAuY4hm4bGbu00XX5zs0_Q1UsIKXYJB3O5veu5UVsFMoGwhz-1QBGjZ3ryTGVw6U4nwJrfdNwRjVCvIs8lamRMOnMWspExnOIyMOk1bnbOwwYbYfoW2WeIYffa0WOF-iN_LJU8"/>
+</div>
+<div class="space-y-6 order-2 md:order-2 md:pl-12">
+<h2 class="font-headline-md text-headline-md">Distribution</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Last-mile excellence delivered via our dedicated fleet. We guarantee morning-fresh arrivals for retail shelves and culinary kitchens across the metropolitan region.</p>
+<div class="flex items-center gap-4">
+<span class="text-display-lg font-display-lg text-secondary opacity-20">03</span>
+<div>
+<p class="font-label-md text-label-md text-secondary">SPEED</p>
+<p class="font-headline-sm text-headline-sm">24hr Delivery Turnaround</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Service 4: Warehousing -->
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center bg-surface-container-low py-16">
+<div class="space-y-6 order-2 md:order-1 md:pr-12">
+<h2 class="font-headline-md text-headline-md">Warehousing</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">State-of-the-art climate-controlled facilities. Our storage solutions are designed to preserve the life and nutrient density of every delicate harvest.</p>
+<div class="flex items-center gap-4">
+<span class="text-display-lg font-display-lg text-secondary opacity-20">04</span>
+<div>
+<p class="font-label-md text-label-md text-secondary">CAPACITY</p>
+<p class="font-headline-sm text-headline-sm">500k Sq Ft Storage</p>
+</div>
+</div>
+</div>
+<div class="service-image-container aspect-[4/3] order-1 md:order-2">
+<img class="w-full h-full object-cover" data-alt="Interior view of a pristine, high-end agricultural warehouse. Symmetrical rows of wooden crates are stacked perfectly under soft, diffused industrial lighting. The atmosphere is quiet and authoritative, with a focus on organization and quality control. The colors are predominantly warm woods and linen-toned concrete." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi2xzI4ZxB48ZWyqhWujnnswB6OEjD00DBmtkd8Jmf1lwKrY1Fti5GUPStameXAdsPU6JsXDHvsLZxJl-qGehbZUfV_ApDIcbkVY3cdxJGRcxmhvZGZ8nDdfBQiujXg96PTopWGecd2blJ44j5MAyoPnKqK5ykdK52FUroJJcLFIody3OMdLZp_NC63HxPHkOwI5qoHmItD3xF6zYIZirc2DGwesltuZ-AIQkUmtHvaYy16mg3U6k0qV6_U7McfgHHqjJx0vUF29Y"/>
+</div>
+</div>
+<!-- Service 5: Cold Chain -->
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="service-image-container aspect-[4/3] order-1 md:order-1">
+<img class="w-full h-full object-cover" data-alt="Macro photography of fresh berries covered in light frost inside a high-tech refrigeration unit. The lighting is crisp and cool, highlighting the vibrant reds and deep blues of the fruit. The image conveys 'artisanal precision' and the technical sophistication of cold chain management in a premium agricultural context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0X-CUs8kDMwnUzHzrhoHhxEjN0ghXD5RGO08H4IqvZEV2nsWjX44_RRkkXOFCITp6wIE9xt-5t0vmOwu_Z4aWGR02xWwFtSzpzP_emT3mXwoxqMdwXsvsoHrzoodjcJIL7E1G2okYn8b4cbtw6lIOfts7D5xcnXf0taoshE4HnUKNPM09jnNeBwAYSWOl2kvUTDADw7XSUjXHssady98Ki4uXusewrau-VBe5uQfxm9OilP4ea7uj0pvDarj_Gz2f_72h3ajeUAo"/>
+</div>
+<div class="space-y-6 order-2 md:order-2 md:pl-12">
+<h2 class="font-headline-md text-headline-md">Cold Chain</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Uninterrupted thermal protection from farm to fork. Our real-time monitoring sensors ensure that the temperature never deviates by more than one degree.</p>
+<div class="flex items-center gap-4">
+<span class="text-display-lg font-display-lg text-secondary opacity-20">05</span>
+<div>
+<p class="font-label-md text-label-md text-secondary">ACCURACY</p>
+<p class="font-headline-sm text-headline-sm">+/- 0.5°C Temp Control</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Service 6: Packaging -->
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center bg-surface-container-low py-16">
+<div class="space-y-6 order-2 md:order-1 md:pr-12">
+<h2 class="font-headline-md text-headline-md">Packaging</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Eco-conscious, bespoke packaging solutions that enhance shelf-appeal while protecting the integrity of organic produce.</p>
+<div class="flex items-center gap-4">
+<span class="text-display-lg font-display-lg text-secondary opacity-20">06</span>
+<div>
+<p class="font-label-md text-label-md text-secondary">SUSTAINABILITY</p>
+<p class="font-headline-sm text-headline-sm">100% Recyclable Range</p>
+</div>
+</div>
+</div>
+<div class="service-image-container aspect-[4/3] order-1 md:order-2">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of artisanal, biodegradable paper packaging for premium grapes. The packaging features elegant, minimalist typography and a subtle embossed logo of Crown Harvest. The lighting is soft and editorial, emphasizing the tactile quality of the sustainable materials and the vibrant color of the produce." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBRoVTyfG-4HFmhQgVOaePKHX89iX7sjI1Gd2PTC4zoBAEOA8dTEBV4mDzNmbsV0_Nq0qSzYN1Jd1veD6hdm0z0SO_bSIPOPxiaC1Pe91vObWa4SSPrWIn_XO_9g_XBv7BQQ35Z8YpXf0LJ2-9EjYwI1a8yjflEWMy88tByg3AujzErYLm1fQJjwU3jmIOTkaHRjOYqsVc5xYGs1hyJItvOY4fbvCSjLuV4LoUBuhV_OcNvgEccV2HpdJZ_Y_tp9gpHILyVALDU6c"/>
+</div>
+</div>
+<!-- Service 7: Marketing -->
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="service-image-container aspect-[4/3] order-1 md:order-1">
+<img class="w-full h-full object-cover" data-alt="A sophisticated retail display design in a high-end organic grocer. The display uses dark wood, Harvest Gold accents, and clear signage to tell the story of the farm. The lighting is focused and warm, creating an inviting atmosphere that blends traditional agriculture with modern brand marketing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ5rmss7gGXYgo6Z2t5wiHdu8ZvVSbI9DAr3BFG9ExjH8VOwQHW6y-u78ST2tuupWZ1Z2u_zUFeVwo8N8nyK3QOBsaxHlZ1hPAujKVgYn2LWKpMtGW4vSgY5OkA7bpTcroLGKmZIuX06bovyELOACP7KsJNs0HkKzBWlDatVqV647Kdwg8cD1wGxAAhZsZ4839YtMRyqEzJrMJ0KwQ6ZD4W_InVAiSlmZktyoEeQ92ZrsamQ3mD5fHWkKj5xinl1kdrwjr-SncYCc"/>
+</div>
+<div class="space-y-6 order-2 md:order-2 md:pl-12">
+<h2 class="font-headline-md text-headline-md">Marketing</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">We don’t just supply; we help you sell. Leverage our data-driven insights and premium branding assets to connect with your customers.</p>
+<div class="flex items-center gap-4">
+<span class="text-display-lg font-display-lg text-secondary opacity-20">07</span>
+<div>
+<p class="font-label-md text-label-md text-secondary">GROWTH</p>
+<p class="font-headline-sm text-headline-sm">15% Avg Sales Uplift</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Service 8: Customer Service -->
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center bg-surface-container-low py-16">
+<div class="space-y-6 order-2 md:order-1 md:pr-12">
+<h2 class="font-headline-md text-headline-md">Customer Service</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A dedicated account manager for every partner. We pride ourselves on proactive communication and rapid problem resolution.</p>
+<div class="flex items-center gap-4">
+<span class="text-display-lg font-display-lg text-secondary opacity-20">08</span>
+<div>
+<p class="font-label-md text-label-md text-secondary">SUPPORT</p>
+<p class="font-headline-sm text-headline-sm">24/7 Priority Support</p>
+</div>
+</div>
+</div>
+<div class="service-image-container aspect-[4/3] order-1 md:order-2">
+<img class="w-full h-full object-cover" data-alt="A focused, professional individual in a modern, linen-toned office space, engaging in a meaningful conversation on a headset. The background is softly blurred with hints of greenery and warm wood furniture. The lighting is natural and bright, conveying a sense of warmth, authority, and high-value customer service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqT_kXG-Y4zgLML4xd6GWAUc2oVkJPElsWQ_kBC2atcG7e8fvWQpgdiYM4QIp2SgHoyW4ISNgIvwyK2PGJ1WgCIPMF_IH7TPA3_-pE1eUWly1-W_J0kdyVSd4ffU2Gh5Cppf_Ztlmy7ik2Sjwecn-_EHr2__SdYT5cTQDG0Wt1Fpodqiu4puWIojGEVrPjfCNPqf_YQUkrqPRDBtf7hQU7eAcUXo9eZKz-Lu8CnZnHCYDGtN9UtdR3SGVX0vvKKMUXdhiORaf5pgk"/>
+</div>
+</div>
+</section>
+<!-- Bottom Banner -->
+<section class="bg-primary-container text-on-primary-container py-24 relative overflow-hidden">
+<!-- Subtle Overlay -->
+<div class="absolute inset-0 opacity-10 cinematic-grain"></div>
+<div class="px-margin-desktop max-w-container-max mx-auto text-center relative z-10">
+<h2 class="font-headline-lg text-headline-lg mb-8 text-on-primary">Ready to partner with Crown Harvest?</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container max-w-xl mx-auto mb-12">
+                    Join an elite network of buyers and suppliers who prioritize quality, provenance, and operational excellence.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-full font-button text-button hover:bg-secondary/90 transition-all shadow-lg active:scale-95">
+                        Become a Customer
+                    </button>
+<button class="border-[1.5px] border-outline text-on-primary px-8 py-4 rounded-full font-button text-button hover:bg-white/5 transition-all active:scale-95">
+                        Contact Sales
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest w-full py-section-gap-desktop border-t border-secondary/20 dark:border-secondary-fixed/20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="font-headline-sm text-headline-sm text-on-surface dark:text-inverse-on-surface font-bold">
+                    Crown Harvest
+                </div>
+<p class="text-on-surface-variant dark:text-on-secondary-fixed-variant max-w-xs font-body-md text-body-md">
+                    Cultivating premium agricultural connections since 1984. From farm gate to global table.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="space-y-4">
+<p class="font-label-md text-label-md text-secondary font-bold uppercase">Quick Links</p>
+<nav class="flex flex-col gap-2">
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary underline transition-all font-label-md text-label-md" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary underline transition-all font-label-md text-label-md" href="#">Services</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-secondary underline transition-all font-label-md text-label-md" href="#">About Us</a>
+</nav>
+</div>
+<div class="space-y-4">
+<p class="font-label-md text-label-md text-secondary font-bold uppercase">Contact Info</p>
+<p class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-label-md text-label-md">info@crownharvest.com<br/>+1 (555) 012-3456</p>
+</div>
+</div>
+<div class="space-y-4">
+<p class="font-label-md text-label-md text-secondary font-bold uppercase">Newsletter</p>
+<div class="flex gap-2">
+<input class="bg-surface-variant/50 border border-outline-variant rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-secondary/50 outline-none" placeholder="Email Address" type="email"/>
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg material-symbols-outlined">arrow_forward</button>
+</div>
+<div class="pt-8 text-on-surface-variant dark:text-on-secondary-fixed-variant font-label-md text-label-md">
+                    © 2024 Crown Harvest. All rights reserved.
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.grid > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

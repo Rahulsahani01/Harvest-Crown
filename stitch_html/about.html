@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Story | Crown Harvest</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#390c00",
+                        "tertiary-container": "#3f0e00",
+                        "on-background": "#1d1b16",
+                        "on-surface-variant": "#4f453f",
+                        "on-primary-fixed-variant": "#5b4131",
+                        "outline": "#81756e",
+                        "surface-container-high": "#ede7de",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f9f3ea",
+                        "surface-variant": "#e7e2d9",
+                        "on-tertiary-container": "#d7653c",
+                        "secondary": "#815500",
+                        "outline-variant": "#d3c3bb",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#feb234",
+                        "surface": "#fff9ef",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#745847",
+                        "on-surface": "#1d1b16",
+                        "surface-container": "#f3ede4",
+                        "secondary-fixed-dim": "#ffb94c",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff9ef",
+                        "inverse-primary": "#e4bfa9",
+                        "on-secondary-fixed": "#291800",
+                        "on-secondary-container": "#6d4700",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "secondary-fixed": "#ffddb2",
+                        "on-secondary-fixed-variant": "#624000",
+                        "surface-container-highest": "#e7e2d9",
+                        "on-tertiary-fixed-variant": "#822702",
+                        "tertiary": "#140200",
+                        "inverse-on-surface": "#f6f0e7",
+                        "surface-dim": "#dfd9d1",
+                        "primary-fixed": "#ffdcc7",
+                        "primary-container": "#2e1a0c",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#2a1709",
+                        "on-primary-container": "#a0806c",
+                        "primary-fixed-dim": "#e4bfa9",
+                        "tertiary-fixed": "#ffdbd0",
+                        "primary": "#0f0300",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#32302a",
+                        "background": "#fff9ef"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "section-gap-mobile": "64px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "section-gap-desktop": "120px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Playfair Display"],
+                        "button": ["DM Sans"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["DM Sans"],
+                        "body-md": ["DM Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "label-md": ["DM Sans"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["1.5rem", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "button": ["1rem", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["2.25rem", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["3rem", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["1.125rem", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["1rem", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["2rem", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "label-md": ["0.875rem", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["4.5rem", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .editorial-border {
+            border-left: 4px solid #815500;
+        }
+        .grain-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .timeline-line {
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, #815500 15%, #815500 85%, transparent);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-surface shadow-sm border-b border-outline-variant/30">
+<nav class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">Crown Harvest</div>
+<ul class="hidden md:flex gap-8 items-center h-full">
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Home</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Products</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Services</a></li>
+<li><a class="font-label-md text-label-md text-secondary font-bold border-b-2 border-secondary" href="#">About Us</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Us</a></li>
+</ul>
+<button class="bg-secondary text-on-secondary px-6 py-3 rounded-full font-button text-button transition-transform hover:scale-105 active:scale-95 shadow-lg">
+                Become a Customer
+            </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative py-section-gap-desktop bg-surface-container-low overflow-hidden">
+<div class="grain-overlay"></div>
+<div class="px-margin-desktop max-w-container-max mx-auto text-center relative z-10">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest block mb-4">Our Legacy</span>
+<h1 class="font-headline-lg text-headline-lg md:text-display-lg text-primary mb-6">Our Story</h1>
+<p class="font-headline-sm text-headline-sm text-on-surface-variant max-w-2xl mx-auto italic">
+                    "Decades of harvest. A lifetime of trust."
+                </p>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Brand Story Section -->
+<section class="py-section-gap-desktop px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="relative group">
+<div class="absolute -inset-4 bg-secondary/10 rounded-lg -rotate-1 group-hover:rotate-0 transition-transform duration-500"></div>
+<img alt="Heritage Landscape" class="relative z-10 w-full h-[500px] object-cover rounded-lg shadow-xl grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" data-alt="A sweeping, cinematic landscape of a rolling wheat field during the golden hour, featuring deep shadows and warm, amber lighting. The scene captures the essence of heritage agriculture with a focus on natural textures and vast horizons under a soft, hazy sky. The visual style is premium and editorial, emphasizing the connection between the earth and artisanal cultivation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9xUBMlOZLFgzAJF9BLw7GeCw9Mwuit4HUAh9vybng_Z4LQriKyiwyqiUgsMIzbsnMPC4GtBSVWXom909yDmKxdrt4AXZ4_5yaXTiw_H1wT-RjBju8GR3YoLjjoTYa0VzVeyOakW7DQyiGYfjNXNRt0cdGgGU5QnxhlSu8ScVV5d-hgGrDVcoVRDsbXO_7bpYRV8Y_zB8RtBtBNBYiX6JojoXDCljIkpbCrX6xScvKlE4iucNXnbFmxALuyxUCYNdkWLufTKKeyYY"/>
+</div>
+<div class="editorial-border pl-8 md:pl-12">
+<h2 class="font-headline-md text-headline-md text-primary mb-8">Nurturing Excellence Since 2005</h2>
+<div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<p>
+                            Crown Harvest was founded on the simple belief that quality should never be compromised for scale. What started as a small family collective in the heart of the valley has grown into a premier wholesale partner, yet our hands-on approach remains unchanged.
+                        </p>
+<p>
+                            Every grain, every fruit, and every shipment carries with it the weight of our reputation. We treat each harvest as if it were destined for our own table, ensuring that our partners receive only the finest artisanal products the land has to offer.
+                        </p>
+<p>
+                            Our journey is defined by the seasons and driven by a relentless pursuit of perfection. As we look toward the future, we remain rooted in the traditions that earned us your trust.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission/Vision/Values Section -->
+<section class="py-section-gap-desktop bg-surface-container">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Mission -->
+<div class="bg-surface p-10 rounded-lg border border-outline-variant/30 hover:border-secondary transition-colors group">
+<div class="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl">eco</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Our Mission</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            To bridge the gap between high-end producers and discerning buyers through a transparent, quality-first supply chain.
+                        </p>
+</div>
+<!-- Vision -->
+<div class="bg-surface p-10 rounded-lg border border-outline-variant/30 hover:border-secondary transition-colors group">
+<div class="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl">visibility</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Our Vision</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            To be the global benchmark for artisanal wholesale, recognized for our commitment to provenance and sustainable growth.
+                        </p>
+</div>
+<!-- Values -->
+<div class="bg-surface p-10 rounded-lg border border-outline-variant/30 hover:border-secondary transition-colors group">
+<div class="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Our Values</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            Integrity in every transaction, reverence for the land, and a dedication to the artisans who make our work possible.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="py-section-gap-desktop px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<h2 class="font-headline-md text-headline-md text-center text-primary mb-20">The Evolution of Excellence</h2>
+<div class="relative max-w-4xl mx-auto">
+<!-- Center Line -->
+<div class="absolute left-1/2 -translate-x-1/2 h-full timeline-line hidden md:block"></div>
+<!-- Milestones -->
+<div class="space-y-16">
+<!-- 2005 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-start group">
+<div class="md:w-1/2 md:pr-12 text-center md:text-right">
+<span class="font-display-lg text-secondary/10 absolute -top-8 left-0 md:left-auto md:right-12 select-none group-hover:text-secondary/20 transition-colors">2005</span>
+<h4 class="font-headline-sm text-headline-sm text-primary relative z-10">The First Harvest</h4>
+<p class="text-on-surface-variant mt-2">Crown Harvest begins with a small 40-acre collective, shipping artisanal grains locally.</p>
+</div>
+<div class="w-4 h-4 bg-secondary rounded-full absolute left-1/2 -translate-x-1/2 z-20 shadow-[0_0_10px_rgba(129,85,0,0.5)]"></div>
+</div>
+<!-- 2009 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-end group">
+<div class="w-4 h-4 bg-secondary rounded-full absolute left-1/2 -translate-x-1/2 z-20 shadow-[0_0_10px_rgba(129,85,0,0.5)]"></div>
+<div class="md:w-1/2 md:pl-12 text-center md:text-left">
+<span class="font-display-lg text-secondary/10 absolute -top-8 right-0 md:right-auto md:left-12 select-none group-hover:text-secondary/20 transition-colors">2009</span>
+<h4 class="font-headline-sm text-headline-sm text-primary relative z-10">Wholesale Expansion</h4>
+<p class="text-on-surface-variant mt-2">Opened our first regional distribution center, partnering with premium grocers.</p>
+</div>
+</div>
+<!-- 2014 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-start group">
+<div class="md:w-1/2 md:pr-12 text-center md:text-right">
+<span class="font-display-lg text-secondary/10 absolute -top-8 left-0 md:left-auto md:right-12 select-none group-hover:text-secondary/20 transition-colors">2014</span>
+<h4 class="font-headline-sm text-headline-sm text-primary relative z-10">Sustainability Milestone</h4>
+<p class="text-on-surface-variant mt-2">Achieved 100% organic certification across all partner estates.</p>
+</div>
+<div class="w-4 h-4 bg-secondary rounded-full absolute left-1/2 -translate-x-1/2 z-20 shadow-[0_0_10px_rgba(129,85,0,0.5)]"></div>
+</div>
+<!-- 2018 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-end group">
+<div class="w-4 h-4 bg-secondary rounded-full absolute left-1/2 -translate-x-1/2 z-20 shadow-[0_0_10px_rgba(129,85,0,0.5)]"></div>
+<div class="md:w-1/2 md:pl-12 text-center md:text-left">
+<span class="font-display-lg text-secondary/10 absolute -top-8 right-0 md:right-auto md:left-12 select-none group-hover:text-secondary/20 transition-colors">2018</span>
+<h4 class="font-headline-sm text-headline-sm text-primary relative z-10">Going Global</h4>
+<p class="text-on-surface-variant mt-2">Expanded exports to European and Asian specialty markets.</p>
+</div>
+</div>
+<!-- 2022 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-start group">
+<div class="md:w-1/2 md:pr-12 text-center md:text-right">
+<span class="font-display-lg text-secondary/10 absolute -top-8 left-0 md:left-auto md:right-12 select-none group-hover:text-secondary/20 transition-colors">2022</span>
+<h4 class="font-headline-sm text-headline-sm text-primary relative z-10">Digital Transformation</h4>
+<p class="text-on-surface-variant mt-2">Launched our proprietary provenance tracking system for all wholesale partners.</p>
+</div>
+<div class="w-4 h-4 bg-secondary rounded-full absolute left-1/2 -translate-x-1/2 z-20 shadow-[0_0_10px_rgba(129,85,0,0.5)]"></div>
+</div>
+<!-- 2024 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-end group">
+<div class="w-4 h-4 bg-secondary rounded-full absolute left-1/2 -translate-x-1/2 z-20 shadow-[0_0_10px_rgba(129,85,0,0.5)]"></div>
+<div class="md:w-1/2 md:pl-12 text-center md:text-left">
+<span class="font-display-lg text-secondary/10 absolute -top-8 right-0 md:right-auto md:left-12 select-none group-hover:text-secondary/20 transition-colors">2024</span>
+<h4 class="font-headline-sm text-headline-sm text-primary relative z-10">Innovation Future</h4>
+<p class="text-on-surface-variant mt-2">Opening our state-of-the-art climate-neutral packing facility.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="py-section-gap-desktop bg-surface-container-low">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="max-w-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Guiding the Harvest</h2>
+<p class="text-on-surface-variant">Meet the visionaries behind Crown Harvest's commitment to quality and heritage.</p>
+</div>
+<a class="text-secondary font-bold hover:underline flex items-center gap-2 mb-2" href="#">
+                        View Board of Directors <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Leader 1 -->
+<div class="group">
+<div class="relative overflow-hidden mb-6 aspect-[3/4]">
+<img alt="CEO Portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional, editorial portrait of a senior male executive in his late 50s, exuding warmth and authority. He is wearing a high-end, textured linen blazer in a deep earthy brown tone. The background is a soft-focus artisanal office with wooden accents and warm, natural light pouring in from a side window. The lighting is high-contrast and sophisticated, emphasizing skin texture and the quality of the fabric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXYulEHhqIvlaq3H9nL-vdjj1pfgXBIVXySiAOGUzaaTm8IxCns_ltDUCuJgJ4okVjUYoyK8hjVACmeuKuBxhpfNod48-nQWH2QuVctk-YVB0KtBMgQaTjpyOlgsXaRS2IaYtwVJQUCiezp6GbQxNZpifZ26imvIxyV_oAmwLpj8OGIT-3waz-VP831VtrvD8MxmUFbm22py04w1_qv_RkYvdmtyQhhyOu61wP3MdVz10dGx0M1JCMw8fQ4wu5mRBfYdfQVpucSYg"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary">Julian Thorne</h4>
+<p class="font-label-md text-label-md text-secondary uppercase mb-4 tracking-wider">Chief Executive Officer</p>
+<p class="text-on-surface-variant leading-relaxed italic">"Our goal isn't to be the biggest, but to be the bridge to the best the earth can offer."</p>
+</div>
+<!-- Leader 2 -->
+<div class="group">
+<div class="relative overflow-hidden mb-6 aspect-[3/4]">
+<img alt="COO Portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An elegant, editorial portrait of a mid-40s female executive with a focused and confident expression. She stands in a modern, sun-drenched greenhouse space, wearing a crisp tailored vest in a muted cream color. The lighting is bright and ethereal, casting soft shadows and highlighting her profile against a backdrop of lush green plants. The overall aesthetic is one of corporate modern luxury and organic growth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPlq-pfQK7yWYK1LnxN3EVdar8QVyXkhwwxkJNgJUZPmfK9pE0T-GwQ3L4cO3ZaIfiTeB9_rJHwVEowb69jXDd9AtKa3ryx8moijlnrQAisUcZrnLEg0RxRzj_OtCTcoXnDODWB97fVNokrHY3Rkls7CsscdcS1pTxtKWHuvEwxc9exMii8YIaRMg1mZVN85cYL-gohq0hYyadAe7ODhrsRd2D_rY2akoR2yuOGCOAE2Jeimh-fdkfuyluPdsFtS3UCkodUVPubec"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary">Elena Rossi</h4>
+<p class="font-label-md text-label-md text-secondary uppercase mb-4 tracking-wider">Chief Operations Officer</p>
+<p class="text-on-surface-variant leading-relaxed italic">"Operational excellence is how we honor the hard work of our farmers at every step."</p>
+</div>
+<!-- Leader 3 -->
+<div class="group">
+<div class="relative overflow-hidden mb-6 aspect-[3/4]">
+<img alt="Agronomy Lead Portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A rugged yet refined portrait of a male agronomist in his early 40s, standing in a golden wheat field at dusk. He is dressed in high-quality, practical outdoor gear in muted clay and espresso tones. The lighting is cinematic 'blue hour,' with warm highlights catching his hair and shoulders. The mood is authoritative and deeply connected to the natural world, emphasizing artisanal expertise and provenance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYJ05eArpw7oIgeatXKxIxYgppgwOgcVTtn8SMNB6kkCxoyXYa4uf7Sn1XXC4EaPEAWRXwdCFM3h1Qkh13_blvOpqzG6JIEiKeALjq2lDzC5gSIlKIeNTPD5KXkXs0wj2PrPkzBFOMGeWraWMdxUQVCx7dwCO4-DlYFilcGhYL43M4OBqRkjBf_BpfcXOHGwTE5Vx8cVTHA6m0kmY5_4mpcaPmSxZb45sTZ7nYpF94agln7HThEFtH7C7MdNv5-8DZ117-_xbwkgQ"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary">Marcus Vance</h4>
+<p class="font-label-md text-label-md text-secondary uppercase mb-4 tracking-wider">Head of Agronomy</p>
+<p class="text-on-surface-variant leading-relaxed italic">"We listen to the soil before we listen to the markets. That is the secret to our quality."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Certifications Section -->
+<section class="py-24 bg-surface border-y border-outline-variant/30">
+<div class="px-margin-desktop max-w-container-max mx-auto text-center">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-12">Our Standards &amp; Accreditations</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<!-- These are placeholders for badge/logos -->
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-on-surface">verified</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Certified Organic</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-on-surface">public</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Global Gap</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-on-surface">handshake</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Fair Trade</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-on-surface">energy_savings_leaf</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Sustainable Ag</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-on-surface">workspace_premium</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">ISO 22000</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-section-gap-desktop border-t border-secondary/20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">Crown Harvest</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    Curating the finest harvests for the world's most discerning tables since 2005.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-secondary hover:text-on-secondary transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-secondary hover:text-on-secondary transition-all" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md text-secondary uppercase font-bold tracking-widest">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">About Us</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Products</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Wholesale Portal</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md text-secondary uppercase font-bold tracking-widest">Contact Info</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<span>1200 Heritage Oaks Blvd,<br/>Napa Valley, CA 94558</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">call</span>
+<span>+1 (800) 555-CROWN</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">alternate_email</span>
+<span>hello@crownharvest.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-outline-variant/30 text-center px-margin-desktop max-w-container-max mx-auto">
+<p class="font-label-md text-label-md text-on-surface-variant">© 2024 Crown Harvest. All rights reserved. Crafted with integrity.</p>
+</div>
+</footer>
+<script>
+        // Simple scroll observer for basic animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000');
+            // Initial state for animation would be set here if not using simple classes
+        });
+    </script>
+</body></html>
