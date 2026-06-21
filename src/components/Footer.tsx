@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logoImg from '../assets/Crown Harvest Logo.jpg';
+
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -22,7 +24,7 @@ export const Footer: React.FC = () => {
           <p className="font-body-md text-on-surface-variant max-w-sm leading-relaxed">
             Elevating the standard of fresh produce through global expertise and local commitment. Sustainable, artisanal, and reliable since 1984.
           </p>
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4">
             <a 
               href="#" 
               onClick={(e) => e.preventDefault()}
@@ -39,7 +41,13 @@ export const Footer: React.FC = () => {
             >
               <span className="material-symbols-outlined text-on-surface-variant text-xl">public</span>
             </a>
-          </div>
+          </div> */}
+                  {/* Logo */}
+        <img
+          src={logoImg} // update path as needed
+          alt="Crown Harvest Logo"
+          className="h-16 w-auto"
+        />
         </div>
 
         {/* Quick & Support Links */}
@@ -62,6 +70,11 @@ export const Footer: React.FC = () => {
                   Services
                 </Link>
               </li>
+               <li>
+                <Link to="/contact" className="text-on-surface-variant hover:text-secondary underline transition-all font-body-md">
+                  Contact Info
+                </Link>
+              </li>
               <li>
                 <Link to="/about" className="text-on-surface-variant hover:text-secondary underline transition-all font-body-md">
                   About Us
@@ -69,7 +82,7 @@ export const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h4 className="font-label-md text-secondary font-medium mb-6 uppercase tracking-wider">Support</h4>
             <ul className="space-y-4">
               <li>
@@ -93,7 +106,7 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         {/* Newsletter Subscription */}
