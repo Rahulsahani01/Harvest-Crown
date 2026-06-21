@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import logoImg from '../assets/Crown Harvest Logo.jpg';
 
 export const TopNavBar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,9 +24,16 @@ export const TopNavBar: React.FC = () => {
         {/* Logo */}
         <NavLink 
           to="/" 
-          className="font-headline-sm text-headline-sm font-bold text-on-surface hover:opacity-90"
+          className="flex items-center gap-3 hover:opacity-90 transition-opacity"
         >
-          Crown Harvest
+          <img 
+            src={logoImg} 
+            alt="Crown Harvest Logo" 
+            className="w-10 h-10 rounded-full object-cover border border-secondary/20 shadow-sm"
+          />
+          <span className="font-headline-sm text-headline-sm font-bold text-on-surface">
+            Crown Harvest
+          </span>
         </NavLink>
 
         {/* Desktop Navigation Links */}
