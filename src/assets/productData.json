@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "name": "Cauliflower",
+    "image": "/src/assets/vegetables/cauliflower.jpg",
+    "description": "Mild and versatile florets ideal for modern culinary innovations."
+  },
+  {
+    "id": 2,
+    "name": "Kiwi",
+    "image": "/src/assets/fruits/kiwi.jpg",
+    "description": "Tangy and sweet emerald fruit packed with vitamin C and dietary fiber."
+  },
+  {
+    "id": 3,
+    "name": "Apple",
+    "image": "/src/assets/fruits/apple.jpg",
+    "description": "Sweet and crisp fruit rich in fiber and antioxidants."
+  },
+  {
+    "id": 4,
+    "name": "Dragon Fruit",
+    "image": "/src/assets/fruits/dragon-fruit.jpg",
+    "description": "Stunning exotic fruit with a mild, refreshing sweetness and speckles of black seeds."
+  },
+  {
+    "id": 5,
+    "name": "Fig",
+    "image": "/src/assets/fruits/fig.jpg",
+    "description": "Lusciously sweet and chewy fruit with a unique texture and rich history."
+  },
+  {
+    "id": 6,
+    "name": "Lemon",
+    "image": "/src/assets/fruits/lemon.jpg",
+    "description": "Bright and zesty citrus fruit essential for culinary brightness and clean flavor."
+  },
+  {
+    "id": 7,
+    "name": "Pineapple",
+    "image": "/src/assets/fruits/pineapple.jpg",
+    "description": "Boldly sweet and tangy tropical fruit with a golden, juicy interior."
+  },
+  {
+    "id": 8,
+    "name": "Pumpkin",
+    "image": "/src/assets/vegetables/pumpkin.jpg",
+    "description": "Rich and sweet autumn squash ideal for comforting soups and baking."
+  },
+  {
+    "id": 9,
+    "name": "Avocado",
+    "image": "/src/assets/fruits/avocado.jpg",
+    "description": "Creamy, nutrient-dense fruit packed with healthy monounsaturated fats."
+  },
+  {
+    "id": 10,
+    "name": "Blueberry",
+    "image": "/src/assets/fruits/blueberry.jpg",
+    "description": "Sweet, tiny berries renowned for their high antioxidant levels and vibrant taste."
+  },
+  {
+    "id": 11,
+    "name": "Corn",
+    "image": "/src/assets/vegetables/corn.jpg",
+    "description": "Golden kernels bursting with natural sweetness and summery flavor."
+  },
+  {
+    "id": 12,
+    "name": "Papaya",
+    "image": "/src/assets/fruits/papaya.jpg",
+    "description": "Tropical treasure with buttery orange flesh and a sweet, musky flavor."
+  },
+  {
+    "id": 13,
+    "name": "Cucumber",
+    "image": "/src/assets/vegetables/cucumber.jpg",
+    "description": "Cool and crisp garden favorite perfect for refreshing salads."
+  },
+  {
+    "id": 14,
+    "name": "Coconut",
+    "image": "/src/assets/fruits/coconut.jpg",
+    "description": "Exotic and refreshing with crisp white meat and hydrating water."
+  },
+  {
+    "id": 15,
+    "name": "Carrot",
+    "image": "/src/assets/vegetables/carrot.jpg",
+    "description": "Sweet, crunchy orange root vegetable rich in beta-carotene."
+  },
+  {
+    "id": 16,
+    "name": "Strawberry",
+    "image": "/src/assets/fruits/strawberry.jpg",
+    "description": "Luscious, red berries with a classic sweet taste and fragrant aroma."
+  },
+  {
+    "id": 17,
+    "name": "Mango",
+    "image": "/src/assets/fruits/mango.jpg",
+    "description": "Rich, velvety tropical fruit known as the king of fruits for its luscious sweetness."
+  },
+  {
+    "id": 18,
+    "name": "Garlic",
+    "image": "/src/assets/vegetables/garlic.jpg",
+    "description": "Aromatic bulb essential for building deep, savory foundation flavors."
+  },
+  {
+    "id": 19,
+    "name": "Onion",
+    "image": "/src/assets/vegetables/onion.jpg",
+    "description": "Pungent and sweet kitchen staple indispensable for depth of flavor."
+  },
+  {
+    "id": 20,
+    "name": "Raspberry",
+    "image": "/src/assets/fruits/raspberry.jpg",
+    "description": "Delicate and tart red berries offering a sophisticated, bright flavor."
+  },
+  {
+    "id": 21,
+    "name": "Pear",
+    "image": "/src/assets/fruits/pear.jpg",
+    "description": "Gently sweet and soft-textured fruit perfect for elegant poaching or fresh pairing."
+  },
+  {
+    "id": 22,
+    "name": "Broccoli",
+    "image": "/src/assets/vegetables/broccoli.jpg",
+    "description": "Nutrient-dense green florets with a crisp stem and earthy flavor profile."
+  },
+  {
+    "id": 23,
+    "name": "Cabbage",
+    "image": "/src/assets/vegetables/cabbage.jpg",
+    "description": "Versatile, crisp leaves packed with vitamins and perfect for fresh salads."
+  },
+  {
+    "id": 24,
+    "name": "Beetroot",
+    "image": "/src/assets/vegetables/beetroot.jpg",
+    "description": "Earthy, sweet root vegetable with a deep crimson color and rich nutrients."
+  },
+  {
+    "id": 25,
+    "name": "Okra",
+    "image": "/src/assets/vegetables/okra.jpg",
+    "description": "Tender, green pods valued for their unique texture and culinary versatility."
+  },
+  {
+    "id": 26,
+    "name": "Tomato",
+    "image": "/src/assets/vegetables/tomato.jpg",
+    "description": "Juicy, vine-ripened garden classic balancing sweetness and acidity."
+  },
+  {
+    "id": 27,
+    "name": "Grapes",
+    "image": "/src/assets/fruits/grapes.jpg",
+    "description": "Juicy, sweet clusters perfect for refreshing snacks and pairings."
+  },
+  {
+    "id": 28,
+    "name": "Lettuce",
+    "image": "/src/assets/vegetables/lettuce.jpg",
+    "description": "Crisp, leafy greens forming the perfect fresh base for salads and wraps."
+  },
+  {
+    "id": 29,
+    "name": "Guava",
+    "image": "/src/assets/fruits/guava.jpg",
+    "description": "Fragrant tropical fruit with a sweet, unique pink flesh and high vitamin C."
+  },
+  {
+    "id": 30,
+    "name": "Blackberry",
+    "image": "/src/assets/fruits/blackberry.jpg",
+    "description": "Plump and juicy berries offering a tart flavor profile and rich antioxidants."
+  },
+  {
+    "id": 31,
+    "name": "Potato",
+    "image": "/src/assets/vegetables/potato.jpg",
+    "description": "Comforting, versatile tuber ideal for baking, roasting, or mashing."
+  },
+  {
+    "id": 32,
+    "name": "Zucchini",
+    "image": "/src/assets/vegetables/zucchini.jpg",
+    "description": "Mild, tender-skinned summer squash versatile in both sweet and savory recipes."
+  },
+  {
+    "id": 33,
+    "name": "Radish",
+    "image": "/src/assets/vegetables/radish.jpg",
+    "description": "Crisp and peppery root vegetable adding a bright pop of color and bite."
+  },
+  {
+    "id": 34,
+    "name": "Pomegranate",
+    "image": "/src/assets/fruits/pomegranate.jpg",
+    "description": "Crimson jewels of sweet-tart seeds rich in polyphenols and antioxidants."
+  },
+  {
+    "id": 35,
+    "name": "Lychee",
+    "image": "/src/assets/fruits/lychee.jpg",
+    "description": "Sweet and floral tropical delicacy with a translucent, juicy flesh."
+  },
+  {
+    "id": 36,
+    "name": "Sweet Potato",
+    "image": "/src/assets/vegetables/sweet-potato.jpg",
+    "description": "Naturally sweet, copper-skinned root vegetable rich in vitamins."
+  },
+  {
+    "id": 37,
+    "name": "Banana",
+    "image": "/src/assets/fruits/banana.jpg",
+    "description": "Naturally sweet and energizing fruit rich in potassium and vitamins."
+  },
+  {
+    "id": 38,
+    "name": "Eggplant",
+    "image": "/src/assets/vegetables/eggplant.jpg",
+    "description": "Glossy purple skin with a tender, absorbent flesh perfect for savory dishes."
+  },
+  {
+    "id": 39,
+    "name": "Asparagus",
+    "image": "/src/assets/vegetables/asparagus.jpg",
+    "description": "Elegant green spears offering a tender-crisp texture and earthy flavor."
+  },
+  {
+    "id": 40,
+    "name": "Peach",
+    "image": "/src/assets/fruits/peach.jpg",
+    "description": "Velvety, sweet fruit with juicy flesh and a delightful summer fragrance."
+  },
+  {
+    "id": 41,
+    "name": "Celery",
+    "image": "/src/assets/vegetables/celery.jpg",
+    "description": "Crisp and hydrating stalks providing a clean, refreshing crunch."
+  },
+  {
+    "id": 42,
+    "name": "Ginger",
+    "image": "/src/assets/vegetables/ginger.jpg",
+    "description": "Zesty, warming root spice providing a sharp, aromatic kick."
+  },
+  {
+    "id": 43,
+    "name": "Orange",
+    "image": "/src/assets/fruits/orange.jpg",
+    "description": "Juicy and vibrant citrus fruit packed with refreshing sweetness and vitamin C."
+  },
+  {
+    "id": 44,
+    "name": "Watermelon",
+    "image": "/src/assets/fruits/watermelon.jpg",
+    "description": "Hydrating and summer-fresh fruit with crisp, sweet pink flesh."
+  },
+  {
+    "id": 45,
+    "name": "Peas",
+    "image": "/src/assets/vegetables/peas.jpg",
+    "description": "Sweet, tender green spheres packed with fresh, garden-grown sweetness."
+  },
+  {
+    "id": 46,
+    "name": "Cherry",
+    "image": "/src/assets/fruits/cherry.jpg",
+    "description": "Deep red, sweet and tart cherries perfect for snacks and premium desserts."
+  },
+  {
+    "id": 47,
+    "name": "Bell Pepper",
+    "image": "/src/assets/vegetables/bell-pepper.jpg",
+    "description": "Crisp and colorful peppers bringing a sweet, mild crunch to any dish."
+  },
+  {
+    "id": 48,
+    "name": "Spinach",
+    "image": "/src/assets/vegetables/spinach.jpg",
+    "description": "Tender, nutrient-rich dark green leaves perfect raw or lightly cooked."
+  },
+  {
+    "id": 49,
+    "name": "Other Fruites",
+    "image": "/src/assets/fruits/Other Fruites.png",
+    "description": "Premium fresh other fruites sourced directly from quality growers."
+  },
+  {
+    "id": 50,
+    "name": "Other Vegetables",
+    "image": "/src/assets/vegetables/Other Vegetables.png",
+    "description": "Fresh organic other vegetables harvested at peak maturity."
+  }
+]

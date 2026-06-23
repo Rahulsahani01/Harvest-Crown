@@ -1,69 +1,59 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import productData from '../assets/productData.json';
 
-interface ProductCard {
-  id: string;
-  title: string;
-  desc: string;
-  tags: string[];
-  img: string;
+interface Product {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
 }
+
+const getTags = (imagePath: string, name: string) => {
+  const isFruit = imagePath.includes('/fruits/');
+  if (name.includes('Other')) {
+    return isFruit ? ['Premium', 'Assorted', 'Seasonal'] : ['Premium', 'Assorted', 'Fresh'];
+  }
+  
+  const fruitTagsPool = [
+    ['Organic', 'Sweet', 'Fresh'],
+    ['Vitamins', 'Juicy', 'Natural'],
+    ['Farm Fresh', 'Seasonal', 'Premium'],
+    ['Anti-oxidant', 'Non-GMO', 'Sweet']
+  ];
+  
+  const vegTagsPool = [
+    ['Healthy', 'Local', 'Non-GMO'],
+    ['Fresh Harvest', 'Earthy', 'Organic'],
+    ['Nutritious', 'Fiber Rich', 'Fresh'],
+    ['Premium Quality', 'Pesticide Free', 'Local']
+  ];
+  
+  const pool = isFruit ? fruitTagsPool : vegTagsPool;
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash += name.charCodeAt(i);
+  }
+  return pool[hash % pool.length];
+};
 
 export const Products: React.FC = () => {
   const navigate = useNavigate();
-  const [selectedProduct, setSelectedProduct] = useState<ProductCard | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [quoteForm, setQuoteForm] = useState({ name: '', email: '', qty: 'Medium (pallet)', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(6);
 
-  const products: ProductCard[] = [
-    {
-      id: 'fruits',
-      title: 'Fresh Fruits',
-      desc: 'Hand-picked at peak ripeness from the finest orchards across the region.',
-      tags: ['Farm Fresh', 'Seasonal', 'Wholesale'],
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBO4vtxW5e4OKHnPS5dEPeGFEAbi3e9WfQ-lujuHebFqsSUmHWxVjNgj99uK-efSaDb3190-xLiYRH8EeOhYInd2x5acHPvLFYy4laJTDDcZ4u0j_Hp3HXrYj-w0OB7gE55TmilYUmBrJIImCp9411SlRMzLQzTusyVttQ4AQeLXPSBtOcL59tjQautX578gnNJoOfV1Ci-y_nYbkLwrnv0dRz9xUEkW8j_K9-De45Aop3SROtIqKuWaChKe9sXACs925gU9428umQ',
-    },
-    {
-      id: 'vegetables',
-      title: 'Fresh Vegetables',
-      desc: 'Nutritious, crisp, and ethically grown vegetables delivered within hours of harvest.',
-      tags: ['Farm Fresh', 'Non-GMO', 'Local'],
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuACik6wfCKeT5AudpUtBMaqERvc_dtN8jPCjcYnlmztNTeUDK8qTWzYEB9MUitROLyVrccYipSmCo3DA2lM9PuLNnjLiv79oErEQshactNwhR416psB3ZClSwxytpj_IAgZRClaLzewD6FG0PPY9nFjxS-BQIBhtWM7Xtf0v8e1f0oFn14k-2Wbu0YueH8hVuYp-D9ll4khZ0Xz8Qwy-PqLRLy6cen-tVXwqTAsvWlb8BNOsrYBz24GqVTWAePAaiayF2u3sZEAW9k',
-    },
-    {
-      id: 'organic',
-      title: 'Organic Produce',
-      desc: 'Certified pesticide-free produce for the health-conscious consumer and kitchen.',
-      tags: ['Certified', 'Eco-Friendly', 'Purity'],
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBbLLn2fKV1NGQ8dstgFnrCRKoS0o8UDZ2BmxlRQbTvLyFViXy1YRiD11zgxkRvWdWf67lIRT03SrAMyhJU2CyVQjXfLXI9LOkXCs2GqFE72fwvoyfzCaTfsRD_d8NKC5LwkfY3dWlKHIDjM-uh9l-mVqO--ucnGKtSdj0nf_c444o1irCEA-3KGWy5ljbWA88ISV5MPreFoq3W6ilXjVMHzkI0BqDsePu7LkqhCaPDbrVpA8LPyKGTXrY5AfSnovvH7ck9Skts0hc',
-    },
-    {
-      id: 'local',
-      title: 'Local Produce',
-      desc: 'Supporting our community growers with direct farm-to-table logistics.',
-      tags: ['Community', 'Direct', 'Fresh'],
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCPgjwWbz0yNqVF4ldX8ISGbKmkVkRSP1VxREosU6UMb0uW6X_Vethho1PomKXb36TujyDJ12FvSh23Lr3nTsZP2gBTJUkZISyCDoqEEslYNsYAK44GEICP7BE9qXzUAohQh-dHnb1TT9Z22I1xuTIQTYV9Sv7gkBtpvjYXq6BYjDDorQRPRXIAQi0dW4zuPw_VJJwIkIfpyHQzRej6usMfPZ9rGA4AoO5XFPNaHZ2QR11xg_2Jhh5sveDUUMsW0lW2b4LzdUVzSeY',
-    },
-    {
-      id: 'imported',
-      title: 'Imported Produce',
-      desc: 'Premium international selections chosen for exceptional flavor and rarity.',
-      tags: ['Global', 'Exotic', 'Premium'],
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBcVfu7MoiUMtel8nPEUMXAbl97yTxsP7ZW0e7lgYPBJs3BEpG2aOmusx-ZIR2Ly4Rr5g_mjcfeZgsNYbtNX1ZfhejmMlQGGCxf-i2wnzWwNHeTCMDaZGzdbFLJ8muc1ui1S6ZQhSiONr71BI3Er2skwTYdUmgL8K1TPYTXLsrC0OCnNusCV2ywEdU8xN4VwY2aHgeV2MGDNFFzHxpTzX4kt7dQZ6r8_mhU8uN2DQER8LnSV0YkzS-j59F13LHBMg0qSOCK7sVx1Sk',
-    },
-    {
-      id: 'specialty',
-      title: 'Specialty & Ethnic',
-      desc: 'Unique varieties and specialty items tailored for diverse culinary traditions.',
-      tags: ['Niche', 'Flavor', 'Bespoke'],
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD1b73yT_BfpwlJaxKEfbx1mbO_o5kjAmCWv4Oz8ZAyYEIA7BtVJfafbmcAUTmtJQpGNxcaSy7pULgNgU_YEaBxPBcZhdK2UzmB604jTnM4nld7GrD8sR4o5P4UmC-eT9XZxv3YgRIqRC1YKk3uUYKC5bvLd1jdDNJeK29_G9RkHvbdZF7TIU7zm7wZZsUAdKpnNhSp_-ZRq94TbXn2YSfZAX1l5DLitsM2t2SjmtZwjXqL6RetZrw5yYkjDS2JXVA2RaVPF4mUAPc',
-    },
-  ];
+  const displayedProducts = productData.slice(0, visibleCount);
 
-  const handleOpenQuote = (product: ProductCard) => {
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 6);
+  };
+
+  const handleOpenQuote = (product: Product) => {
     setSelectedProduct(product);
-    setQuoteForm({ ...quoteForm, message: `Hello, I'd like to request a wholesale quote for ${product.title}.` });
+    setQuoteForm({ ...quoteForm, message: `Hello, I'd like to request a wholesale quote for ${product.name}.` });
     setSubmitSuccess(false);
   };
 
@@ -101,47 +91,62 @@ export const Products: React.FC = () => {
       {/* Product Categories Grid */}
       <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-          {products.map((prod) => (
-            <div 
-              key={prod.id} 
-              className="linen-card rounded-lg overflow-hidden group hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
-            >
-              <div className="h-72 overflow-hidden relative cinematic-grain">
-                <img 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                  src={prod.img} 
-                  alt={prod.title}
-                />
-              </div>
-              <div className="p-8 flex-grow flex flex-col justify-between">
-                <div>
-                  <h3 className="font-headline-sm text-headline-sm text-primary mb-3">{prod.title}</h3>
-                  <p className="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
-                    {prod.desc}
-                  </p>
+          {displayedProducts.map((prod) => {
+            const tags = getTags(prod.image, prod.name);
+            return (
+              <div 
+                key={prod.id} 
+                className="linen-card rounded-lg overflow-hidden group hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+              >
+                <div className="h-72 overflow-hidden relative cinematic-grain">
+                  <img 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    src={prod.image} 
+                    alt={prod.name}
+                  />
                 </div>
-                <div>
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {prod.tags.map((tag, idx) => (
-                      <span 
-                        key={idx} 
-                        className="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md text-xs font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                <div className="p-8 flex-grow flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-headline-sm text-headline-sm text-primary mb-3">{prod.name}</h3>
+                    <p className="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                      {prod.description}
+                    </p>
                   </div>
-                  <button 
-                    onClick={() => handleOpenQuote(prod)}
-                    className="w-full border-[1.5px] border-outline-variant hover:border-secondary hover:bg-secondary/5 py-4 rounded-full font-button text-button text-primary transition-all duration-200 cursor-pointer text-center"
-                  >
-                    Request a Quote
-                  </button>
+                  <div>
+                    <div className="flex flex-wrap gap-2 mb-8">
+                      {tags.map((tag, idx) => (
+                        <span 
+                          key={idx} 
+                          className="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md text-xs font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <button 
+                      onClick={() => handleOpenQuote(prod)}
+                      className="w-full border-[1.5px] border-outline-variant hover:border-secondary hover:bg-secondary/5 py-4 rounded-full font-button text-button text-primary transition-all duration-200 cursor-pointer text-center"
+                    >
+                      Request a Quote
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
+
+        {/* Load More Button */}
+        {visibleCount < productData.length && (
+          <div className="flex justify-center mt-12">
+            <button 
+              onClick={handleLoadMore}
+              className="bg-secondary text-white hover:bg-on-secondary-fixed px-10 py-5 font-button text-button transition-all duration-200 cursor-pointer shadow-md active:scale-95 flex items-center gap-2 rounded-full border border-transparent"
+            >
+              Load More <span className="material-symbols-outlined text-lg">expand_more</span>
+            </button>
+          </div>
+        )}
       </section>
 
       {/* Custom Order Banner */}
@@ -186,7 +191,7 @@ export const Products: React.FC = () => {
               <form onSubmit={handleSubmitQuote} className="space-y-6">
                 <div>
                   <h3 className="font-headline-sm text-headline-sm text-primary mb-2">Request Quote</h3>
-                  <p className="text-sm text-on-surface-variant">For category: <span className="font-bold text-secondary">{selectedProduct.title}</span></p>
+                  <p className="text-sm text-on-surface-variant">For product: <span className="font-bold text-secondary">{selectedProduct.name}</span></p>
                 </div>
 
                 <div className="space-y-4">
