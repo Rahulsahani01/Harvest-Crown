@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import productData from '../assets/productData.json';
+import { useEmail } from '../hooks/useEmail';
 
 interface Product {
   id: number;
@@ -41,8 +42,7 @@ export const Products: React.FC = () => {
   const navigate = useNavigate();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [quoteForm, setQuoteForm] = useState({ name: '', email: '', qty: 'Medium (pallet)', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const { sendEmail, status, setStatus, errorMessage } = useEmail();
   const [visibleCount, setVisibleCount] = useState(6);
 
   const displayedProducts = productData.slice(0, visibleCount);
@@ -54,23 +54,36 @@ export const Products: React.FC = () => {
   const handleOpenQuote = (product: Product) => {
     setSelectedProduct(product);
     setQuoteForm({ ...quoteForm, message: `Hello, I'd like to request a wholesale quote for ${product.name}.` });
-    setSubmitSuccess(false);
+    setStatus('idle');
   };
 
   const handleCloseQuote = () => {
     setSelectedProduct(null);
+    setStatus('idle');
   };
 
-  const handleSubmitQuote = (e: React.FormEvent) => {
+  const handleSubmitQuote = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
+    if (!selectedProduct) return;
+
+    const success = await sendEmail({
+      type: 'quote',
+      senderEmail: quoteForm.email,
+      subject: `Wholesale Quote Request: ${selectedProduct.name}`,
+      metadata: {
+        name: quoteForm.name,
+        product: selectedProduct.name,
+        volume: quoteForm.qty,
+        message: quoteForm.message,
+      },
+    });
+
+    if (success) {
+      setQuoteForm({ name: '', email: '', qty: 'Medium (pallet)', message: '' });
       setTimeout(() => {
         handleCloseQuote();
-      }, 1800);
-    }, 1500);
+      }, 2500);
+    }
   };
 
   return (
@@ -181,7 +194,7 @@ export const Products: React.FC = () => {
               <span className="material-symbols-outlined text-2xl">close</span>
             </button>
 
-            {submitSuccess ? (
+            {status === 'success' ? (
               <div className="py-12 text-center flex flex-col items-center justify-center gap-4">
                 <span className="material-symbols-outlined text-green-600 text-6xl animate-bounce">check_circle</span>
                 <h3 className="font-headline-sm text-headline-sm text-primary">Quote Request Submitted</h3>
@@ -244,6 +257,13 @@ export const Products: React.FC = () => {
                   </div>
                 </div>
 
+                {status === 'error' && (
+                  <div className="text-red-600 font-label-md text-xs flex items-center gap-2 animate-fadeIn">
+                    <span className="material-symbols-outlined text-sm">error</span>
+                    {errorMessage || 'Failed to submit quote request. Please try again.'}
+                  </div>
+                )}
+
                 <div className="pt-4 flex gap-4">
                   <button 
                     type="button"
@@ -254,10 +274,10 @@ export const Products: React.FC = () => {
                   </button>
                   <button 
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={status === 'sending'}
                     className="flex-grow bg-secondary text-white py-3 rounded-full text-sm font-button hover:bg-on-secondary-fixed transition-colors active:scale-95 disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
                   >
-                    {isSubmitting ? (
+                    {status === 'sending' ? (
                       <>
                         <span className="material-symbols-outlined text-lg animate-spin">sync</span> Submitting...
                       </>

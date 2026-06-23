@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEmail } from '../hooks/useEmail';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -12,14 +13,25 @@ export const Contact: React.FC = () => {
   });
 
   const [activeField, setActiveField] = useState<string | null>(null);
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle');
+  const { sendEmail, status, setStatus, errorMessage } = useEmail();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('sending');
+    
+    const success = await sendEmail({
+      type: 'inquiry',
+      senderEmail: formData.email,
+      subject: formData.subject || 'General Inquiry',
+      metadata: {
+        name: formData.name,
+        company: formData.company,
+        businessType: formData.businessType,
+        phone: formData.phone,
+        message: formData.message,
+      },
+    });
 
-    setTimeout(() => {
-      setStatus('success');
+    if (success) {
       setFormData({
         name: '',
         company: '',
@@ -32,7 +44,7 @@ export const Contact: React.FC = () => {
       setTimeout(() => {
         setStatus('idle');
       }, 3000);
-    }, 1500);
+    }
   };
 
   return (
@@ -256,28 +268,37 @@ export const Contact: React.FC = () => {
                 </div>
 
                 {/* Submit button */}
-                <div className="md:col-span-2 mt-4">
+                <div className="md:col-span-2 mt-4 flex flex-col gap-4">
                   {status === 'success' ? (
                     <div className="w-full md:w-auto bg-green-600 text-white px-12 py-4 rounded-full font-button text-button shadow-md flex items-center justify-center gap-3 animate-fadeIn">
                       <span className="material-symbols-outlined text-lg">check_circle</span>
                       Message Sent Successfully
                     </div>
                   ) : (
-                    <button 
-                      type="submit"
-                      disabled={status === 'sending'}
-                      className="w-full md:w-auto bg-secondary-container text-on-secondary-container px-12 py-4 rounded-full font-button text-button shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all active:scale-95 disabled:opacity-50 cursor-pointer flex items-center justify-center gap-3"
-                    >
-                      {status === 'sending' ? (
-                        <>
-                          <span className="material-symbols-outlined text-lg animate-spin">sync</span> Sending...
-                        </>
-                      ) : (
-                        <>
-                          Submit Inquiry <span className="material-symbols-outlined text-lg">send</span>
-                        </>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                      <button 
+                        type="submit"
+                        disabled={status === 'sending'}
+                        className="w-full md:w-auto bg-secondary-container text-on-secondary-container px-12 py-4 rounded-full font-button text-button shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all active:scale-95 disabled:opacity-50 cursor-pointer flex items-center justify-center gap-3"
+                      >
+                        {status === 'sending' ? (
+                          <>
+                            <span className="material-symbols-outlined text-lg animate-spin">sync</span> Sending...
+                          </>
+                        ) : (
+                          <>
+                            Submit Inquiry <span className="material-symbols-outlined text-lg">send</span>
+                          </>
+                        )}
+                      </button>
+
+                      {status === 'error' && (
+                        <div className="text-red-600 font-label-md text-xs flex items-center gap-2 animate-fadeIn">
+                          <span className="material-symbols-outlined text-sm">error</span>
+                          {errorMessage || 'Failed to send inquiry. Please try again.'}
+                        </div>
                       )}
-                    </button>
+                    </div>
                   )}
                 </div>
               </form>

@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/Crown Harvest Logo.jpg';
+import { useEmail } from '../hooks/useEmail';
 
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
+  const { sendEmail, status, errorMessage } = useEmail();
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email.trim()) {
-      setIsSubscribed(true);
-      setEmail('');
+      const success = await sendEmail({
+        type: 'newsletter',
+        senderEmail: email.trim(),
+        subject: 'Newsletter Subscription Request',
+        metadata: {}
+      });
+      if (success) {
+        setEmail('');
+      }
     }
   };
 
@@ -116,29 +124,43 @@ export const Footer: React.FC = () => {
             Stay informed about seasonal harvests and global market trends.
           </p>
           
-          {isSubscribed ? (
-            <div className="p-4 bg-secondary/10 border border-secondary/20 rounded-lg text-secondary flex items-center gap-2">
+          {status === 'success' ? (
+            <div className="p-4 bg-secondary/10 border border-secondary/20 rounded-lg text-secondary flex items-center gap-2 animate-fadeIn">
               <span className="material-symbols-outlined">check_circle</span>
               <span className="font-label-md text-sm">Thank you for subscribing!</span>
             </div>
           ) : (
-            <form onSubmit={handleSubscribe} className="flex gap-2">
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email address"
-                className="bg-surface border border-outline-variant rounded-lg px-4 py-3 flex-grow focus:ring-2 focus:ring-secondary/50 focus:border-secondary outline-none transition-all placeholder:text-outline/50"
-              />
-              <button
-                type="submit"
-                className="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-on-secondary-fixed transition-colors cursor-pointer flex items-center justify-center"
-                aria-label="Subscribe"
-              >
-                <span className="material-symbols-outlined">send</span>
-              </button>
-            </form>
+            <div className="flex flex-col gap-2">
+              <form onSubmit={handleSubscribe} className="flex gap-2">
+                <input
+                  type="email"
+                  required
+                  disabled={status === 'sending'}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email address"
+                  className="bg-surface border border-outline-variant rounded-lg px-4 py-3 flex-grow focus:ring-2 focus:ring-secondary/50 focus:border-secondary outline-none transition-all placeholder:text-outline/50 disabled:opacity-50"
+                />
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-on-secondary-fixed transition-colors cursor-pointer flex items-center justify-center disabled:opacity-50"
+                  aria-label="Subscribe"
+                >
+                  {status === 'sending' ? (
+                    <span className="material-symbols-outlined animate-spin text-sm">sync</span>
+                  ) : (
+                    <span className="material-symbols-outlined">send</span>
+                  )}
+                </button>
+              </form>
+              {status === 'error' && (
+                <div className="text-red-600 text-xs flex items-center gap-1 animate-fadeIn">
+                  <span className="material-symbols-outlined text-[14px]">error</span>
+                  {errorMessage || 'Subscription failed. Please try again.'}
+                </div>
+              )}
+            </div>
           )}
         </div>
       </div>
