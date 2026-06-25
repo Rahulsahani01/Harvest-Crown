@@ -10,6 +10,11 @@ interface Product {
   description: string;
 }
 
+const productImages = import.meta.glob('../assets/**/*.{jpg,jpeg,png,webp}', {
+  eager: true,
+  import: 'default',
+}) as Record<string, string>;
+
 const getTags = (imagePath: string, name: string) => {
   const isFruit = imagePath.includes('/fruits/');
   if (name.includes('Other')) {
@@ -46,7 +51,10 @@ export const Products: React.FC = () => {
   const [visibleCount, setVisibleCount] = useState(6);
 
   const displayedProducts = productData.slice(0, visibleCount);
-  const resolveImageUrl = (imagePath: string) => new URL(imagePath.replace(/^\/src\//, '../'), import.meta.url).href;
+  const resolveImageUrl = (imagePath: string) => {
+    const normalizedPath = imagePath.replace(/^\/src\//, '../').replace(/^\//, '');
+    return productImages[normalizedPath] ?? imagePath;
+  };
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 6);
