@@ -15,34 +15,20 @@ export const useEmail = () => {
     setStatus('sending');
     setErrorMessage(null);
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
-    if (!accessKey) {
-      setStatus('error');
-      setErrorMessage('Web3Forms Access Key (VITE_WEB3FORMS_ACCESS_KEY) is missing in environment variables.');
-      return false;
-    }
-
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('/api/send-email', {
         method: 'POST',
-        headers: { 
+        headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Accept': 'application/json',
         },
-        body: JSON.stringify({
-          access_key: accessKey,
-          email: payload.senderEmail,
-          subject: payload.subject,
-          from_name: 'Crown Harvest Website',
-          form_type: payload.type,
-          ...payload.metadata,
-        }),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
 
       if (!response.ok || !data.success) {
-        throw new Error(data.message || 'Failed to submit form to Web3Forms.');
+        throw new Error(data.message || 'Failed to send email.');
       }
 
       setStatus('success');

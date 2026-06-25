@@ -44,17 +44,29 @@ npm run lint
 
 ## 2. Environment Variables
 
-To allow direct form submissions to your email inbox via Web3Forms, create a `.env` file in the project root:
+To send contact, quote, and newsletter submissions through Azure Communication Services, create a `.env` file in the project root:
 
 ```env
-# Web3Forms Access Key
-VITE_WEB3FORMS_ACCESS_KEY="your_web3forms_access_key_here"
+ACS_CONNECTION_STRING="endpoint=https://your-resource.communication.azure.com/;accesskey=your_access_key"
+ACS_EMAIL_SENDER="DoNotReply@your-resource.azurecomm.net"
+ACS_EMAIL_RECIPIENT="you@example.com"
 ```
 
 > [!NOTE]
-> Vite environment variables must be prefixed with `VITE_` to be loaded in the application using `import.meta.env`.
+> These values are consumed by the Azure Static Web Apps API function. They are not exposed to the browser.
+
+For local API execution, the same values can also live in `api/.env`.
+
+For GitHub Actions deployment, add these repository secrets:
+
+```text
+ACS_CONNECTION_STRING
+ACS_EMAIL_SENDER
+ACS_EMAIL_RECIPIENT
+AZURE_STATIC_WEB_APPS_API_TOKEN
+```
 
 ---
 
 ## 3. Email Integration Flow
-For detailed guides on how to request an access key and test form submissions locally, see the [Web3Forms Email Integration Guide](file:///home/rahul/Documents/Harvest%20Crown/server/EMAIL_FLOW.md).
+For the architecture and runtime flow, see [server/EMAIL_FLOW.md](/home/ayush/temp/Harvest-Crown/server/EMAIL_FLOW.md).

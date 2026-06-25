@@ -47,11 +47,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Inject the Web3Forms key from GitHub Secrets into a .env file
-      # Vite requires the VITE_ prefix to expose variables to the browser bundle
-      - name: Create environment file
+      # Inject Azure Communication Services secrets for the serverless API
+      - name: Create API environment file
         run: |
-          echo "VITE_WEB3FORMS_ACCESS_KEY=${{ secrets.WEB3FORMS_ACCESS_KEY }}" >> .env
+          mkdir -p api
+          {
+            echo "ACS_CONNECTION_STRING=${{ secrets.ACS_CONNECTION_STRING }}"
+            echo "ACS_EMAIL_SENDER=${{ secrets.ACS_EMAIL_SENDER }}"
+            echo "ACS_EMAIL_RECIPIENT=${{ secrets.ACS_EMAIL_RECIPIENT }}"
+          } > api/.env
 
       # Compile TypeScript and bundle assets via Vite
       # Output goes to /dist (Vite default — no custom outDir set in vite.config.ts)
@@ -66,5 +70,6 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           app_location: ""
+          api_location: "api"
           output_location: "dist"
           action: "upload"

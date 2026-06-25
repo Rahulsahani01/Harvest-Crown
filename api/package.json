@@ -1,0 +1,10 @@
+{
+  "name": "harvest-crown-api",
+  "version": "1.0.0",
+  "private": true,
+  "main": "send-email/index.js",
+  "dependencies": {
+    "@azure/communication-email": "^1.0.0",
+    "dotenv": "^17.4.2"
+  }
+}
