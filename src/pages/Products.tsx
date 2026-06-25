@@ -46,6 +46,7 @@ export const Products: React.FC = () => {
   const [visibleCount, setVisibleCount] = useState(6);
 
   const displayedProducts = productData.slice(0, visibleCount);
+  const resolveImageUrl = (imagePath: string) => new URL(imagePath.replace(/^\/src\//, '../'), import.meta.url).href;
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 6);
@@ -106,6 +107,7 @@ export const Products: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
           {displayedProducts.map((prod) => {
             const tags = getTags(prod.image, prod.name);
+            const imageUrl = resolveImageUrl(prod.image);
             return (
               <div 
                 key={prod.id} 
@@ -114,7 +116,7 @@ export const Products: React.FC = () => {
                 <div className="h-72 overflow-hidden relative cinematic-grain">
                   <img 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                    src={prod.image} 
+                    src={imageUrl} 
                     alt={prod.name}
                   />
                 </div>
