@@ -21,7 +21,7 @@ export const Services: React.FC = () => {
       title: 'Procurement',
       desc: "Our specialist buyers negotiate directly with farm gates, ensuring price stability and first-pick quality for every seasonal cycle. We manage the complexity so you don't have to.",
       metricLabel: 'METRIC',
-      metricVal: '98% Fulfillment Rate',
+      metricVal: '98% Fulfilment Rate',
       img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDLSC5kfifz6Er8rUmwHMlFm46vaV2KsUSeNy5W381losNdWDsdW-jTie7xdWSF8MKYehB9osuV2rjxjc_O6ZiDJcOJNU6iQQpkXef2ieP-BBg_u0sGBYcf3Sta3oe4UrSEJKYa_v6uB6lnXIE077yGOrDSLdlJul_MXEYlEBketh2skGlWedMxnCpCOvqsDWesamaa11ilnPSSmiQ97BlSCLTv9NQXy1F9A8BKyFMBbCs2P08_hlO3udXIRCoos4SydMcxX7wUxK0',
       alt: 'Fresh harvest selection',
     },
@@ -119,9 +119,9 @@ export const Services: React.FC = () => {
       {/* Hero Header */}
       <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center mb-16">
         <span className="font-label-md text-label-md text-secondary tracking-widest uppercase mb-4 block">Our Operations</span>
-        <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6 text-primary leading-tight">What We Do</h1>
-        <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-          End-to-end produce solutions for businesses of every size. We bridge the gap between global growers and local markets through artisanal precision.
+        <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6 text-primary leading-tight font-bold">Delivery & Storage</h1>
+        <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+          We use refrigerated trucks and partners to distribute your order safely across Canada. Our team handles cold-chain logistics so your produce arrives fresh and in compliance with all provincial regulations.
         </p>
         <div className="mt-12 h-px bg-secondary opacity-20 w-32 mx-auto"></div>
       </section>
@@ -189,18 +189,12 @@ export const Services: React.FC = () => {
           <p className="font-body-lg text-body-lg text-surface-variant max-w-xl mx-auto mb-12">
             Join an elite network of buyers and suppliers who prioritize quality, provenance, and operational excellence.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <button 
               onClick={() => navigate('/contact')}
-              className="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-full font-button text-button hover:bg-secondary-fixed transition-all shadow-lg active:scale-95 cursor-pointer"
+              className="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-full font-button text-button hover:bg-secondary-fixed transition-all shadow-lg active:scale-95 cursor-pointer flex items-center gap-2"
             >
-              Become a Customer
-            </button>
-            <button 
-              onClick={() => navigate('/contact')}
-              className="border-[1.5px] border-outline text-white hover:bg-white/10 px-8 py-4 rounded-full font-button text-button transition-all active:scale-95 cursor-pointer"
-            >
-              Contact Sales
+              Contact Sales <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </button>
           </div>
         </div>

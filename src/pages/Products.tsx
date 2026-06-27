@@ -31,7 +31,7 @@ const getTags = (imagePath: string, name: string) => {
   const vegTagsPool = [
     ['Healthy', 'Local', 'Non-GMO'],
     ['Fresh Harvest', 'Earthy', 'Organic'],
-    ['Nutritious', 'Fiber Rich', 'Fresh'],
+    ['Nutritious', 'Fibre Rich', 'Fresh'],
     ['Premium Quality', 'Pesticide Free', 'Local']
   ];
   
@@ -48,9 +48,25 @@ export const Products: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [quoteForm, setQuoteForm] = useState({ name: '', email: '', qty: 'Medium (pallet)', message: '' });
   const { sendEmail, status, setStatus, errorMessage } = useEmail();
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const [visibleCount, setVisibleCount] = useState(6);
 
-  const displayedProducts = productData.slice(0, visibleCount);
+  const filteredProducts = productData.filter((prod) => {
+    if (selectedCategory === 'All') return true;
+    if (selectedCategory === 'Fresh Fruits (Canada-sourced)') {
+      return prod.image.includes('/fruits/');
+    }
+    if (selectedCategory === 'Fresh Vegetables (Canada-sourced)') {
+      return prod.image.includes('/vegetables/');
+    }
+    if (selectedCategory === 'And More') {
+      return prod.name.includes('Other');
+    }
+    return true;
+  });
+
+  const displayedProducts = filteredProducts.slice(0, visibleCount);
+
   const resolveImageUrl = (imagePath: string) => {
     const normalizedPath = imagePath.replace(/^\/src\//, '../').replace(/^\//, '');
     return productImages[normalizedPath] ?? imagePath;
@@ -58,6 +74,11 @@ export const Products: React.FC = () => {
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 6);
+  };
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setVisibleCount(6);
   };
 
   const handleOpenQuote = (product: Product) => {
@@ -96,7 +117,7 @@ export const Products: React.FC = () => {
   };
 
   return (
-    <div className="py-8 md:py-16">
+    <div className="py-8 md:py-16 animate-fadeIn">
       {/* Header and Breadcrumbs */}
       <header className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-left mb-12">
         <nav className="flex items-center gap-2 mb-6 font-label-md text-label-md text-on-surface-variant">
@@ -104,13 +125,30 @@ export const Products: React.FC = () => {
           <span className="material-symbols-outlined text-sm">chevron_right</span>
           <span className="text-secondary font-bold">Products</span>
         </nav>
-        <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-primary leading-tight">Our Produce</h1>
+        <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-primary leading-tight font-bold">Our Produce</h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-          Fresh from farm to your door — quality you can taste. Our curated selection of wholesale and retail agricultural products represent the pinnacle of seasonal harvest.
+          Choose from a wide range of fruits and vegetables, available in bulk for retail and foodservice. All items are packed fresh for Canadian market needs.
         </p>
       </header>
 
-      {/* Product Categories Grid */}
+      {/* Category Tabs */}
+      <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-10 overflow-x-auto gap-4 flex hide-scrollbar border-b border-outline-variant/30 pb-4">
+        {['All', 'Fresh Fruits (Canada-sourced)', 'Fresh Vegetables (Canada-sourced)', 'And More'].map((category) => (
+          <button
+            key={category}
+            onClick={() => handleCategoryChange(category)}
+            className={`font-label-md text-label-md px-6 py-2.5 rounded-full transition-all cursor-pointer whitespace-nowrap ${
+              selectedCategory === category
+                ? 'bg-secondary text-white font-bold'
+                : 'bg-surface-container-low text-on-surface-variant hover:text-secondary border border-outline-variant/30'
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
+      {/* Product Grid */}
       <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
           {displayedProducts.map((prod) => {
@@ -130,7 +168,7 @@ export const Products: React.FC = () => {
                 </div>
                 <div className="p-8 flex-grow flex flex-col justify-between">
                   <div>
-                    <h3 className="font-headline-sm text-headline-sm text-primary mb-3">{prod.name}</h3>
+                    <h3 className="font-headline-sm text-headline-sm text-primary mb-3 font-bold">{prod.name}</h3>
                     <p className="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
                       {prod.description}
                     </p>
@@ -160,7 +198,7 @@ export const Products: React.FC = () => {
         </div>
 
         {/* Load More Button */}
-        {visibleCount < productData.length && (
+        {visibleCount < filteredProducts.length && (
           <div className="flex justify-center mt-12">
             <button 
               onClick={handleLoadMore}
@@ -178,7 +216,7 @@ export const Products: React.FC = () => {
         <div className="relative bg-primary-container rounded-xl overflow-hidden p-12 md:p-24 text-center">
           <div className="absolute inset-0 opacity-20 grain-overlay pointer-events-none"></div>
           <div className="relative z-10 max-w-2xl mx-auto text-white">
-            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary-fixed mb-6">Need a custom order?</h2>
+            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary-fixed mb-6 font-bold">Need a custom order?</h2>
             <p className="font-body-lg text-body-lg text-surface-variant mb-10">
               From bespoke packaging to recurring bulk deliveries, our team is ready to curate a solution that fits your specific business needs.
             </p>
@@ -186,7 +224,7 @@ export const Products: React.FC = () => {
               onClick={() => navigate('/contact')}
               className="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-full font-button text-button hover:bg-secondary-fixed transition-colors active:scale-95 cursor-pointer shadow-md"
             >
-              Contact Our Team
+              Request a Quote
             </button>
           </div>
         </div>
@@ -213,7 +251,7 @@ export const Products: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmitQuote} className="space-y-6">
                 <div>
-                  <h3 className="font-headline-sm text-headline-sm text-primary mb-2">Request Quote</h3>
+                  <h3 className="font-headline-sm text-headline-sm text-primary mb-2 font-bold">Request Quote</h3>
                   <p className="text-sm text-on-surface-variant">For product: <span className="font-bold text-secondary">{selectedProduct.name}</span></p>
                 </div>
 

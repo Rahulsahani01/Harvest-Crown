@@ -47,53 +47,91 @@ export const Home: React.FC = () => {
         <div className="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full text-white">
           <div className="max-w-2xl">
             <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6 leading-tight">
-              From the Earth,<br />To Your Table.
+              Canada's Fresh Produce Marketplace
             </h1>
             <p className="font-body-lg text-body-lg mb-10 text-surface-variant/90">
-              Premium wholesale and retail fresh produce, sourced from the world's finest farms with uncompromising standards for quality and sustainability.
+              High-quality fruits and vegetables, sourced directly from Canadian farms and delivered nationwide to grocery chains, retailers, and foodservice businesses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
-                onClick={() => navigate('/products')}
+                onClick={() => navigate('/contact')}
                 className="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-full font-button text-button hover:bg-secondary-fixed transition-colors cursor-pointer"
               >
-                Explore Products
+                Request a Quote
               </button>
               <button 
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate('/products')}
                 className="border-1.5 border-white text-white px-8 py-4 rounded-full font-button text-button hover:bg-white/10 transition-colors border-[1.5px] cursor-pointer"
               >
-                Become a Customer
+                Explore Products
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Crown Harvest (Bento Style) */}
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter">
-          <div className="p-8 bg-surface-container-low border border-outline-variant/30 rounded-lg group hover:border-secondary/50 transition-colors">
-            <span className="material-symbols-outlined text-4xl text-secondary mb-4">public</span>
-            <h3 className="font-headline-sm text-headline-sm mb-3">Global Sourcing</h3>
-            <p className="text-on-surface-variant font-body-md">Partnerships with elite growers across six continents ensure year-round availability.</p>
-          </div>
-          <div className="p-8 bg-surface-container-low border border-outline-variant/30 rounded-lg group hover:border-secondary/50 transition-colors">
-            <span className="material-symbols-outlined text-4xl text-secondary mb-4">ac_unit</span>
-            <h3 className="font-headline-sm text-headline-sm mb-3">Cold Chain</h3>
-            <p className="text-on-surface-variant font-body-md">Advanced temperature-controlled logistics preserving peak freshness from field to dock.</p>
-          </div>
-          <div className="p-8 bg-surface-container-low border border-outline-variant/30 rounded-lg group hover:border-secondary/50 transition-colors">
-            <span className="material-symbols-outlined text-4xl text-secondary mb-4">verified</span>
-            <h3 className="font-headline-sm text-headline-sm mb-3">Premium Quality</h3>
-            <p className="text-on-surface-variant font-body-md">Triple-stage inspection protocols that exceed international food safety standards.</p>
-          </div>
-          <div className="p-8 bg-surface-container-low border border-outline-variant/30 rounded-lg group hover:border-secondary/50 transition-colors">
-            <span className="material-symbols-outlined text-4xl text-secondary mb-4">handshake</span>
-            <h3 className="font-headline-sm text-headline-sm mb-3">Trusted</h3>
-            <p className="text-on-surface-variant font-body-md">A legacy of reliability serving the world's most demanding culinary professionals.</p>
+      {/* How It Works */}
+      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low border-y border-outline-variant/20 animate-fadeIn">
+        <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+          <h2 className="font-headline-md text-headline-md mb-12">How It Works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter text-left mb-6">
+            {/* Step 1 */}
+            <div className="relative p-8 bg-surface border border-outline-variant/30 rounded-lg shadow-sm hover:border-secondary/40 transition-colors">
+              <span className="absolute top-4 right-6 text-6xl font-display-lg text-secondary/15 select-none font-bold">01</span>
+              <span className="material-symbols-outlined text-secondary text-4xl mb-4">search</span>
+              <h3 className="font-headline-sm text-headline-sm mb-3">Step 1 — Browse Products</h3>
+              <p className="text-on-surface-variant font-body-md">
+                Explore our selection of bulk produce—everything from apples to zucchini—all sourced in Canada. Check out seasonal specials and fresh picks.
+              </p>
+            </div>
+            {/* Step 2 */}
+            <div className="relative p-8 bg-surface border border-outline-variant/30 rounded-lg shadow-sm hover:border-secondary/40 transition-colors">
+              <span className="absolute top-4 right-6 text-6xl font-display-lg text-secondary/15 select-none font-bold">02</span>
+              <span className="material-symbols-outlined text-secondary text-4xl mb-4">description</span>
+              <h3 className="font-headline-sm text-headline-sm mb-3">Step 2 — Request a Quote</h3>
+              <p className="text-on-surface-variant font-body-md">
+                Submit a quick request form with your needed quantity and delivery details. We'll respond with a custom quote within 24 hours.
+              </p>
+            </div>
+            {/* Step 3 */}
+            <div className="relative p-8 bg-surface border border-outline-variant/30 rounded-lg shadow-sm hover:border-secondary/40 transition-colors">
+              <span className="absolute top-4 right-6 text-6xl font-display-lg text-secondary/15 select-none font-bold">03</span>
+              <span className="material-symbols-outlined text-secondary text-4xl mb-4">check_circle</span>
+              <h3 className="font-headline-sm text-headline-sm mb-3">Step 3 — Receive and Order</h3>
+              <p className="text-on-surface-variant font-body-md">
+                Review your quote, then confirm your order online. Our team will coordinate delivery to your location in Canada.
+              </p>
+            </div>
           </div>
         </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+        <h2 className="font-headline-md text-headline-md mb-12">Why Canadian Retailers Choose Us</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-10 text-left">
+          <div className="p-8 bg-surface-container-low border border-outline-variant/30 rounded-lg group hover:border-secondary/50 transition-colors">
+            <span className="material-symbols-outlined text-4xl text-secondary mb-4">agriculture</span>
+            <h3 className="font-headline-sm text-headline-sm mb-3">Canadian-Sourced Produce</h3>
+            <p className="text-on-surface-variant font-body-md">Freshly harvested fruits and vegetables from local Canadian farms, ensuring the highest quality and supporting local growers.</p>
+          </div>
+          <div className="p-8 bg-surface-container-low border border-outline-variant/30 rounded-lg group hover:border-secondary/50 transition-colors">
+            <span className="material-symbols-outlined text-4xl text-secondary mb-4">local_shipping</span>
+            <h3 className="font-headline-sm text-headline-sm mb-3">Nationwide Delivery</h3>
+            <p className="text-on-surface-variant font-body-md">Reliable cold-chain logistics distributing fresh orders safely across all provinces, from coast to coast.</p>
+          </div>
+          <div className="p-8 bg-surface-container-low border border-outline-variant/30 rounded-lg group hover:border-secondary/50 transition-colors">
+            <span className="material-symbols-outlined text-4xl text-secondary mb-4">verified_user</span>
+            <h3 className="font-headline-sm text-headline-sm mb-3">Food Safety Guaranteed</h3>
+            <p className="text-on-surface-variant font-body-md">Uncompromising adherence to strict quality standards and safety regulations at every step of our supply chain.</p>
+          </div>
+        </div>
+        <button 
+          onClick={() => navigate('/contact')}
+          className="bg-secondary text-white px-8 py-4 rounded-full font-button text-button hover:bg-on-secondary-fixed transition-colors cursor-pointer inline-flex items-center gap-2"
+        >
+          Contact Sales <span className="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
       </section>
 
       {/* Gold Divider */}
@@ -207,12 +245,12 @@ export const Home: React.FC = () => {
       <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1">
-            <h2 className="font-headline-md text-headline-md mb-8">Nurturing a Legacy of Quality Since 1984</h2>
+            <h2 className="font-headline-md text-headline-md mb-8">Nurturing a Legacy of Quality</h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
-              Crown Harvest began as a family-run orchard with a single mission: to redefine what it means to provide "fresh" produce. Today, we stand as a global leader in the agricultural sector, bridging the gap between small-scale excellence and large-scale demand.
+              Crown Harvest was founded with a single mission: to simplify how grocery chains and foodservice buyers get fresh produce. Sourced directly from local Canadian farms, we deliver nationwide with strict quality standards.
             </p>
             <p className="font-body-md text-body-md text-on-surface-variant mb-10 leading-relaxed">
-              Our commitment to heritage techniques coupled with modern logistics ensures that every piece of fruit and every vegetable that bears the Crown Harvest seal is a testament to our dedication to the earth.
+              Our commitment to supporting local agriculture and ensuring single-source transparency is at the heart of everything we do. From our Ontario warehouse, we deliver from coast-to-coast.
             </p>
             <button 
               onClick={() => navigate('/about')}

@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
         <div className="space-y-6">
           <div className="font-headline-sm text-headline-sm text-on-surface font-bold">Crown Harvest</div>
           <p className="font-body-md text-on-surface-variant max-w-sm leading-relaxed">
-            Elevating the standard of fresh produce through global expertise and local commitment. Sustainable, artisanal, and reliable since 1984.
+            From Canadian Farms to Your Stores. Sourced from Canadian farms and delivered nationwide.
           </p>
           {/* <div className="flex gap-4">
             <a 

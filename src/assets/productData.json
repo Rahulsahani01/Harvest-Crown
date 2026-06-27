@@ -105,19 +105,19 @@
     "id": 18,
     "name": "Garlic",
     "image": "/src/assets/vegetables/garlic.jpg",
-    "description": "Aromatic bulb essential for building deep, savory foundation flavors."
+    "description": "Aromatic bulb essential for building deep, savoury foundation flavours."
   },
   {
     "id": 19,
     "name": "Onion",
     "image": "/src/assets/vegetables/onion.jpg",
-    "description": "Pungent and sweet kitchen staple indispensable for depth of flavor."
+    "description": "Pungent and sweet kitchen staple indispensable for depth of flavour."
   },
   {
     "id": 20,
     "name": "Raspberry",
     "image": "/src/assets/fruits/raspberry.jpg",
-    "description": "Delicate and tart red berries offering a sophisticated, bright flavor."
+    "description": "Delicate and tart red berries offering a sophisticated, bright flavour."
   },
   {
     "id": 21,
@@ -129,7 +129,7 @@
     "id": 22,
     "name": "Broccoli",
     "image": "/src/assets/vegetables/broccoli.jpg",
-    "description": "Nutrient-dense green florets with a crisp stem and earthy flavor profile."
+    "description": "Nutrient-dense green florets with a crisp stem and earthy flavour profile."
   },
   {
     "id": 23,
@@ -141,7 +141,7 @@
     "id": 24,
     "name": "Beetroot",
     "image": "/src/assets/vegetables/beetroot.jpg",
-    "description": "Earthy, sweet root vegetable with a deep crimson color and rich nutrients."
+    "description": "Earthy, sweet root vegetable with a deep crimson colour and rich nutrients."
   },
   {
     "id": 25,
@@ -177,7 +177,7 @@
     "id": 30,
     "name": "Blackberry",
     "image": "/src/assets/fruits/blackberry.jpg",
-    "description": "Plump and juicy berries offering a tart flavor profile and rich antioxidants."
+    "description": "Plump and juicy berries offering a tart flavour profile and rich antioxidants."
   },
   {
     "id": 31,
@@ -189,7 +189,7 @@
     "id": 32,
     "name": "Zucchini",
     "image": "/src/assets/vegetables/zucchini.jpg",
-    "description": "Mild, tender-skinned summer squash versatile in both sweet and savory recipes."
+    "description": "Mild, tender-skinned summer squash versatile in both sweet and savoury recipes."
   },
   {
     "id": 33,
@@ -225,13 +225,13 @@
     "id": 38,
     "name": "Eggplant",
     "image": "/src/assets/vegetables/eggplant.jpg",
-    "description": "Glossy purple skin with a tender, absorbent flesh perfect for savory dishes."
+    "description": "Glossy purple skin with a tender, absorbent flesh perfect for savoury dishes."
   },
   {
     "id": 39,
     "name": "Asparagus",
     "image": "/src/assets/vegetables/asparagus.jpg",
-    "description": "Elegant green spears offering a tender-crisp texture and earthy flavor."
+    "description": "Elegant green spears offering a tender-crisp texture and earthy flavour."
   },
   {
     "id": 40,
@@ -279,7 +279,7 @@
     "id": 47,
     "name": "Bell Pepper",
     "image": "/src/assets/vegetables/bell-pepper.jpg",
-    "description": "Crisp and colorful peppers bringing a sweet, mild crunch to any dish."
+    "description": "Crisp and colourful peppers bringing a sweet, mild crunch to any dish."
   },
   {
     "id": 48,

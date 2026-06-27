@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface Milestone {
   year: string;
@@ -7,25 +8,35 @@ interface Milestone {
 }
 
 export const About: React.FC = () => {
+  const navigate = useNavigate();
   const [activeMilestone, setActiveMilestone] = useState(0);
 
   const milestones: Milestone[] = [
-    { year: '2005', title: 'The First Harvest', desc: 'Crown Harvest begins with a small 40-acre agricultural collective in Sonoma Valley, shipping organic wheat and artisanal grains to local bakers.' },
-    { year: '2009', title: 'Wholesale Expansion', desc: 'Opened our first temperature-controlled distribution center, extending partnerships to premium natural food grocers and regional restaurants.' },
-    { year: '2014', title: 'Sustainability Milestone', desc: 'Achieved 100% organic certification across all partner estates, establishing zero-residual-pesticide standards.' },
-    { year: '2018', title: 'Going Global', desc: 'Initiated export logistics to European and Asian organic markets, bridging the gap between local growers and international tables.' },
-    { year: '2022', title: 'Digital Provenance', desc: 'Launched a custom tracing platform for wholesale partners to audit soil health metrics, harvest dates, and logistics chain coordinates.' },
-    { year: '2024', title: 'Innovation Future', desc: 'Completed commissioning of our state-of-the-art climate-neutral packaging facility, running entirely on self-generated solar arrays.' },
+    { 
+      year: '2025', 
+      title: 'The Foundation', 
+      desc: 'Crown Harvest is founded with our primary Ontario warehouse, establishing a transparent supply chain for Canadian produce.' 
+    },
+    { 
+      year: '2026', 
+      title: 'Coast-to-Coast Logistics', 
+      desc: 'Expanding our refrigerated fleet and logistics partnerships to deliver fresh fruits and vegetables nationwide to Canadian retailers.' 
+    },
+    { 
+      year: '2027', 
+      title: 'Sustainability Leadership', 
+      desc: 'Partnering with local farmers across all provinces to implement climate-neutral packaging and sustainable growing practices.' 
+    }
   ];
 
   return (
-    <div className="py-8 md:py-16">
+    <div className="py-8 md:py-16 animate-fadeIn">
       {/* Hero Section */}
       <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center mb-16 relative">
-        <span className="font-label-md text-label-md text-secondary uppercase tracking-widest block mb-4">Our Legacy</span>
+        <span className="font-label-md text-label-md text-secondary uppercase tracking-widest block mb-4">Canada's Produce Partner</span>
         <h1 className="font-headline-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6 leading-tight">Our Story</h1>
         <p className="font-headline-sm text-headline-sm text-on-surface-variant max-w-2xl mx-auto italic font-medium">
-          "Decades of harvest. A lifetime of trust."
+          "From Canadian Farms to Your Stores"
         </p>
       </section>
 
@@ -41,17 +52,22 @@ export const About: React.FC = () => {
             />
           </div>
           <div className="lg:col-span-6 editorial-border pl-8 md:pl-12">
-            <h2 className="font-headline-md text-headline-md text-primary mb-8">Nurturing Excellence Since 2005</h2>
+            <h2 className="font-headline-md text-headline-md text-primary mb-8 font-bold">Our Story</h2>
             <div className="space-y-6 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
               <p>
-                Crown Harvest was founded on the simple belief that quality should never be compromised for scale. What started as a small family collective in the heart of the valley has grown into a premier wholesale partner, yet our hands-on approach remains unchanged.
+                Founded in 2025, our mission is to simplify how grocery chains and foodservice buyers get fresh produce. We believe in supporting local agriculture and ensuring every order meets strict quality standards.
               </p>
               <p>
-                Every grain, every fruit, and every shipment carries with it the weight of our reputation. We treat each harvest as if it were destined for our own table, ensuring that our partners receive only the finest artisanal products the land has to offer.
+                From our Ontario warehouse we deliver to retailers coast-to-coast, offering single-source transparency.
               </p>
-              <p>
-                Our journey is defined by the seasons and driven by a relentless pursuit of perfection. As we look toward the future, we remain rooted in the traditions that earned us your trust.
-              </p>
+            </div>
+            <div className="mt-8">
+              <button 
+                onClick={() => navigate('/products')}
+                className="bg-secondary text-white px-8 py-4 rounded-full font-button text-button hover:bg-on-secondary-fixed transition-colors cursor-pointer inline-flex items-center gap-2"
+              >
+                Learn More <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </button>
             </div>
           </div>
         </div>
@@ -66,9 +82,9 @@ export const About: React.FC = () => {
               <div className="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-on-secondary-container text-3xl">eco</span>
               </div>
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-4">Our Mission</h3>
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-4 font-bold">Our Mission</h3>
               <p className="text-on-surface-variant leading-relaxed font-body-md">
-                To bridge the gap between high-end producers and discerning buyers through a transparent, quality-first supply chain.
+                To simplify fresh produce sourcing for Canadian grocery chains and foodservice buyers through a transparent, quality-first supply chain.
               </p>
             </div>
             {/* Vision */}
@@ -76,9 +92,9 @@ export const About: React.FC = () => {
               <div className="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-on-secondary-container text-3xl">visibility</span>
               </div>
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-4">Our Vision</h3>
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-4 font-bold">Our Vision</h3>
               <p className="text-on-surface-variant leading-relaxed font-body-md">
-                To be the global benchmark for artisanal wholesale, recognized for our commitment to provenance and sustainable growth.
+                To be Canada's leading fresh produce partner, recognized for our commitment to single-source transparency and sustainable growth.
               </p>
             </div>
             {/* Values */}
@@ -86,9 +102,9 @@ export const About: React.FC = () => {
               <div className="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-on-secondary-container text-3xl">verified_user</span>
               </div>
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-4">Our Values</h3>
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-4 font-bold">Our Values</h3>
               <p className="text-on-surface-variant leading-relaxed font-body-md">
-                Integrity in every transaction, reverence for the land, and a dedication to the artisans who make our work possible.
+                Integrity in every delivery, supporting local Canadian agriculture, and strict dedication to food safety compliance.
               </p>
             </div>
           </div>
@@ -97,7 +113,7 @@ export const About: React.FC = () => {
 
       {/* Interactive Timeline Section */}
       <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24">
-        <h2 className="font-headline-md text-headline-md text-center text-primary mb-12">The Evolution of Excellence</h2>
+        <h2 className="font-headline-md text-headline-md text-center text-primary mb-12 font-bold">The Evolution of Excellence</h2>
         
         {/* Years selector tab navigation */}
         <div className="max-w-2xl mx-auto flex justify-between border-b border-outline-variant/30 pb-4 mb-10 overflow-x-auto gap-4 hide-scrollbar">
@@ -137,8 +153,8 @@ export const About: React.FC = () => {
       <section className="bg-surface-container-low py-16 md:py-24 mb-24 border-y border-outline-variant/20">
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="max-w-xl mb-16">
-            <h2 className="font-headline-md text-headline-md text-primary mb-4">Guiding the Harvest</h2>
-            <p className="text-on-surface-variant font-body-md">Meet the visionaries behind Crown Harvest's commitment to quality and heritage.</p>
+            <h2 className="font-headline-md text-headline-md text-primary mb-4 font-bold">Guiding the Harvest</h2>
+            <p className="text-on-surface-variant font-body-md">Meet the leadership behind Crown Harvest's commitment to quality and transparency.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
@@ -152,9 +168,9 @@ export const About: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h4 className="font-headline-sm text-headline-sm text-primary">Julian Thorne</h4>
+              <h4 className="font-headline-sm text-headline-sm text-primary font-bold">Julian Thorne</h4>
               <p className="font-label-md text-label-md text-secondary uppercase mb-4 tracking-wider text-xs font-semibold">Chief Executive Officer</p>
-              <p className="text-on-surface-variant font-body-md leading-relaxed italic">"Our goal isn't to be the biggest, but to be the bridge to the best the earth can offer."</p>
+              <p className="text-on-surface-variant font-body-md leading-relaxed italic">"Our goal is to build the most efficient and transparent bridge between Canadian farms and grocery stores."</p>
             </div>
 
             {/* Leader 2 */}
@@ -167,9 +183,9 @@ export const About: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h4 className="font-headline-sm text-headline-sm text-primary">Elena Rossi</h4>
+              <h4 className="font-headline-sm text-headline-sm text-primary font-bold">Elena Rossi</h4>
               <p className="font-label-md text-label-md text-secondary uppercase mb-4 tracking-wider text-xs font-semibold">Chief Operations Officer</p>
-              <p className="text-on-surface-variant font-body-md leading-relaxed italic">"Operational excellence is how we honor the hard work of our farmers at every step."</p>
+              <p className="text-on-surface-variant font-body-md leading-relaxed italic">"Operational excellence is how we honour the hard work of our growers at every step of the logistics chain."</p>
             </div>
 
             {/* Leader 3 */}
@@ -182,9 +198,9 @@ export const About: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h4 className="font-headline-sm text-headline-sm text-primary">Marcus Vance</h4>
+              <h4 className="font-headline-sm text-headline-sm text-primary font-bold">Marcus Vance</h4>
               <p className="font-label-md text-label-md text-secondary uppercase mb-4 tracking-wider text-xs font-semibold">Head of Agronomy</p>
-              <p className="text-on-surface-variant font-body-md leading-relaxed italic">"We listen to the soil before we listen to the markets. That is the secret to our quality."</p>
+              <p className="text-on-surface-variant font-body-md leading-relaxed italic">"Ensuring every crop meets strict Canadian food safety and quality standards is our promise to you."</p>
             </div>
           </div>
         </div>

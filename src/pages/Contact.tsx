@@ -55,9 +55,9 @@ export const Contact: React.FC = () => {
           <div className="inline-block px-4 py-1 mb-6 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full font-label-md text-label-md uppercase tracking-widest text-xs font-bold">
             Reach Out
           </div>
-          <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6 leading-tight">Get in Touch</h1>
+          <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6 leading-tight font-bold">Get in Touch</h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-            Our team of agricultural specialists and wholesale advisors is ready to help you optimize your supply chain with premium artisanal harvests.
+            Ready to order or have questions? Fill out our request form or email our sales team. We're here to help Canadian businesses get great produce.
           </p>
         </div>
         <div className="absolute -right-24 -top-24 w-96 h-96 bg-secondary-container/10 blur-[120px] rounded-full"></div>
@@ -73,9 +73,9 @@ export const Contact: React.FC = () => {
               <div className="flex items-start gap-4">
                 <span className="material-symbols-outlined text-secondary p-3 bg-surface-container-high rounded-xl text-2xl">location_on</span>
                 <div>
-                  <h3 className="font-label-md text-label-md text-secondary uppercase tracking-widest text-xs font-bold mb-1">Our Estate</h3>
+                  <h3 className="font-label-md text-label-md text-secondary uppercase tracking-widest text-xs font-bold mb-1">Our Warehouse</h3>
                   <p className="font-body-md text-body-md text-on-surface leading-relaxed">
-                    482 Harvest Ridge Road, Sonoma Valley,<br />California, CA 95476
+                    1500 Dixie Road, Mississauga,<br />Ontario, L5E 2S2, Canada
                   </p>
                 </div>
               </div>
@@ -84,8 +84,8 @@ export const Contact: React.FC = () => {
                 <span className="material-symbols-outlined text-secondary p-3 bg-surface-container-high rounded-xl text-2xl">call</span>
                 <div>
                   <h3 className="font-label-md text-label-md text-secondary uppercase tracking-widest text-xs font-bold mb-1">Phone</h3>
-                  <p className="font-body-md text-body-md text-on-surface font-semibold">+1 (707) 555-0128</p>
-                  <p className="text-on-surface-variant text-xs mt-1">Mon - Fri, 8:00am - 6:00pm PST</p>
+                  <p className="font-body-md text-body-md text-on-surface font-semibold">+1 (800) 555-0198</p>
+                  <p className="text-on-surface-variant text-xs mt-1">Mon - Fri, 8:00am - 6:00pm EST</p>
                 </div>
               </div>
 
@@ -119,17 +119,17 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Sonoma Map View */}
+            {/* Ontario Map View */}
             <div className="group relative w-full h-80 rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface-container-highest shadow-sm">
               <img 
-                alt="Sonoma Valley Location Map" 
+                alt="Ontario Location Map" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOzprTfI3jSr15N4aMKkm03FiGnKRhoHn5Fxk-ltXGQnCInKGcxwBU_uI3eqd1yKMMgnguqSOvPSQwz-1PAwhlYgrftdTIKzmNGWQgJ5tLXiSTMt61IRHG_BRkjdHvFx3MnAY0rU2ZC99ax7CrpYkbALewG56hOor4nFVVexXr_Gw2sNeP8Qs_KAKuZNkIPmi-CwPCMlDbgB0rwklvXG18p67Zvp8YEvAegHlJAB0x_5Uiu9yhC12WuidDW092hmsQNGjloXfbksw" 
               />
               <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/5 transition-colors"></div>
               <div className="absolute bottom-6 left-6 bg-surface p-4 rounded-xl shadow-lg border border-outline-variant/30">
-                <p className="font-label-md text-primary font-bold text-sm">Crown Harvest Estate</p>
-                <p className="text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold mt-0.5">Sonoma Valley, California</p>
+                <p className="font-label-md text-primary font-bold text-sm">Crown Harvest Warehouse</p>
+                <p className="text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold mt-0.5">Ontario, Canada</p>
               </div>
             </div>
           </div>
@@ -287,7 +287,7 @@ export const Contact: React.FC = () => {
                           </>
                         ) : (
                           <>
-                            Submit Inquiry <span className="material-symbols-outlined text-lg">send</span>
+                            Submit <span className="material-symbols-outlined text-lg">send</span>
                           </>
                         )}
                       </button>
