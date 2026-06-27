@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useReveal } from '../hooks/useReveal';
+import heroImage from '../assets/canadian_harvest_hero.png';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -45,8 +46,8 @@ export const Home: React.FC = () => {
         <div className="absolute inset-0">
           <img 
             className="w-full h-full object-cover" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzyK62igKaxoS7HJlOqkiUXBMMFU63_szlNqa542cI1R_DIGxyAwNZ55Roqqs-dykst7s8kqzX3sGvNPYR9iXvAI8l2193hKJbMxg0vQjrDuxMXegt9LR9TzgabTnkAAW835ytJCR1kScTLDPM3bircRyccUeoRQX6jVZiuIxLhN5pXQJH835GcvwOaviBXkqLnCKQ91eBxz5gHsbBigznxDRfj9IFxvVfXKIQR-y8nLZW1PgzCVrnr6yfNrlD8pi3x0neJw5DFtw" 
-            alt="Crown Harvest Premium golden wheat field at sunset"
+            src={heroImage} 
+            alt="Canadian agricultural landscape with fresh fruits and vegetables"
           />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
