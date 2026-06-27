@@ -290,7 +290,7 @@ export const Contact: React.FC = () => {
       {/* Floating WhatsApp CTA */}
       <div className="fixed bottom-8 right-8 z-[60]">
         <a 
-          href="https://wa.me/917303643351"
+          href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}`}
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-3 bg-[#25D366] text-white pl-4 pr-6 py-3 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.15)] hover:scale-105 transition-transform group"
