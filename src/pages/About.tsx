@@ -51,7 +51,7 @@ export const About: React.FC = () => {
               loading="lazy"
               alt="Heritage Landscape golden wheat field" 
               className="relative z-10 w-full h-[500px] object-cover rounded-lg shadow-xl grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9xUBMlOZLFgzAJF9BLw7GeCw9Mwuit4HUAh9vybng_Z4LQriKyiwyqiUgsMIzbsnMPC4GtBSVWXom909yDmKxdrt4AXZ4_5yaXTiw_H1wT-RjBju8GR3YoLjjoTYa0VzVeyOakW7DQyiGYfjNXNRt0cdGgGU5QnxhlSu8ScVV5d-hgGrDVcoVRDsbXO_7bpYRV8Y_zB8RtBtBNBYiX6JojoXDCljIkpbCrX6xScvKlE4iucNXnbFmxALuyxUCYNdkWLufTKKeyYY" 
+              src="/assets/about-heritage-landscape.jpg" 
             />
           </div>
           <div className="lg:col-span-6 editorial-border pl-8 md:pl-12">

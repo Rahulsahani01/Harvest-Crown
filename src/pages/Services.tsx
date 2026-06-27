@@ -23,7 +23,7 @@ export const Services: React.FC = () => {
       desc: "Our specialist buyers negotiate directly with farm gates, ensuring price stability and first-pick quality for every seasonal cycle. We manage the complexity so you don't have to.",
       metricLabel: 'METRIC',
       metricVal: '98% Fulfilment Rate',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDLSC5kfifz6Er8rUmwHMlFm46vaV2KsUSeNy5W381losNdWDsdW-jTie7xdWSF8MKYehB9osuV2rjxjc_O6ZiDJcOJNU6iQQpkXef2ieP-BBg_u0sGBYcf3Sta3oe4UrSEJKYa_v6uB6lnXIE077yGOrDSLdlJul_MXEYlEBketh2skGlWedMxnCpCOvqsDWesamaa11ilnPSSmiQ97BlSCLTv9NQXy1F9A8BKyFMBbCs2P08_hlO3udXIRCoos4SydMcxX7wUxK0',
+      img: '/assets/services-procurement.jpg',
       alt: 'Fresh harvest selection',
     },
     {
@@ -32,7 +32,7 @@ export const Services: React.FC = () => {
       desc: 'Accessing exotic and staple produce from the world’s most fertile regions. We maintain strict ethical standards and provenance tracking across five continents.',
       metricLabel: 'REACH',
       metricVal: '30+ Countries Sourced',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDO0TL95Kud-bKFJ1UbLfopqDxXuEyqVrgjLsXb7gMkimIZOdZX1MWqIp85FeF1VGvogyVkN7wmOkH-f7Wnd2Q6v9r5JfLjhEQwx_w1C3C1NLr_S-aj1ejm0qVcbHHEqMXHRLeCDgt3dlhlpiF6Kj5ERCAOepMpowjrAjWOiyFrYXfJ7Cf2xRTT7LnyHQuXUZRSTPhYby0tZZKY16y8m6tdLFt2iDW62fsuomIIy8p1KB25hicPK15CVaFHlvHKnUwL2HOwhJHU49Q',
+      img: '/assets/services-global-sourcing.jpg',
       alt: 'Rolling citrus groves',
     },
     {
@@ -41,7 +41,7 @@ export const Services: React.FC = () => {
       desc: 'Last-mile excellence delivered via our dedicated fleet. We guarantee morning-fresh arrivals for retail shelves and culinary kitchens across the metropolitan region.',
       metricLabel: 'SPEED',
       metricVal: '24hr Delivery Turnaround',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC8Gm4W-4ZvshG7iJ0UhNP2PF9e2j0Tzq4KzRcI23d7vQ8LijB0JmIkmrdvbYtZ55HBXTN5IOwGn1TpaWTYDXf7hbP_hElT4lslxi_8miAhYNH6BTxdcPztXVqw-SPKh84xy4GwLMAuY4hm4bGbu00XX5zs0_Q1UsIKXYJB3O5veu5UVsFMoGwhz-1QBGjZ3ryTGVw6U4nwJrfdNwRjVCvIs8lamRMOnMWspExnOIyMOk1bnbOwwYbYfoW2WeIYffa0WOF-iN_LJU8',
+      img: '/assets/services-distribution.jpg',
       alt: 'Logistics fleet loading dock',
     },
     {
@@ -50,7 +50,7 @@ export const Services: React.FC = () => {
       desc: 'State-of-the-art climate-controlled facilities. Our storage solutions are designed to preserve the life and nutrient density of every delicate harvest.',
       metricLabel: 'CAPACITY',
       metricVal: '500k Sq Ft Storage',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBi2xzI4ZxB48ZWyqhWujnnswB6OEjD00DBmtkd8Jmf1lwKrY1Fti5GUPStameXAdsPU6JsXDHvsLZxJl-qGehbZUfV_ApDIcbkVY3cdxJGRcxmhvZGZ8nDdfBQiujXg96PTopWGecd2blJ44j5MAyoPnKqK5ykdK52FUroJJcLFIody3OMdLZp_NC63HxPHkOwI5qoHmItD3xF6zYIZirc2DGwesltuZ-AIQkUmtHvaYy16mg3U6k0qV6_U7McfgHHqjJx0vUF29Y',
+      img: '/assets/services-warehousing.jpg',
       alt: 'Clean organized warehouse',
     },
     {
@@ -59,7 +59,7 @@ export const Services: React.FC = () => {
       desc: 'Uninterrupted thermal protection from farm to fork. Our real-time monitoring sensors ensure that the temperature never deviates by more than one degree.',
       metricLabel: 'ACCURACY',
       metricVal: '+/- 0.5°C Temp Control',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB0X-CUs8kDMwnUzHzrhoHhxEjN0ghXD5RGO08H4IqvZEV2nsWjX44_RRkkXOFCITp6wIE9xt-5t0vmOwu_Z4aWGR02xWwFtSzpzP_emT3mXwoxqMdwXsvsoHrzoodjcJIL7E1G2okYn8b4cbtw6lIOfts7D5xcnXf0taoshE4HnUKNPM09jnNeBwAYSWOl2kvUTDADw7XSUjXHssady98Ki4uXusewrau-VBe5uQfxm9OilP4ea7uj0pvDarj_Gz2f_72h3ajeUAo',
+      img: '/assets/services-cold-chain.jpg',
       alt: 'Macro crop freeze control',
     },
     {
@@ -68,7 +68,7 @@ export const Services: React.FC = () => {
       desc: 'Eco-conscious, bespoke packaging solutions that enhance shelf-appeal while protecting the integrity of organic produce.',
       metricLabel: 'SUSTAINABILITY',
       metricVal: '100% Recyclable Range',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBBRoVTyfG-4HFmhQgVOaePKHX89iX7sjI1Gd2PTC4zoBAEOA8dTEBV4mDzNmbsV0_Nq0qSzYN1Jd1veD6hdm0z0SO_bSIPOPxiaC1Pe91vObWa4SSPrWIn_XO_9g_XBv7BQQ35Z8YpXf0LJ2-9EjYwI1a8yjflEWMy88tByg3AujzErYLm1fQJjwU3jmIOTkaHRjOYqsVc5xYGs1hyJItvOY4fbvCSjLuV4LoUBuhV_OcNvgEccV2HpdJZ_Y_tp9gpHILyVALDU6c',
+      img: '/assets/services-packaging.jpg',
       alt: 'Artisanal paper packaging',
     },
     {
@@ -77,7 +77,7 @@ export const Services: React.FC = () => {
       desc: 'We don’t just supply; we help you sell. Leverage our data-driven insights and premium branding assets to connect with your customers.',
       metricLabel: 'GROWTH',
       metricVal: '15% Avg Sales Uplift',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDQ5rmss7gGXYgo6Z2t5wiHdu8ZvVSbI9DAr3BFG9ExjH8VOwQHW6y-u78ST2tuupWZ1Z2u_zUFeVwo8N8nyK3QOBsaxHlZ1hPAujKVgYn2LWKpMtGW4vSgY5OkA7bpTcroLGKmZIuX06bovyELOACP7KsJNs0HkKzBWlDatVqV647Kdwg8cD1wGxAAhZsZ4839YtMRyqEzJrMJ0KwQ6ZD4W_InVAiSlmZktyoEeQ92ZrsamQ3mD5fHWkKj5xinl1kdrwjr-SncYCc',
+      img: '/assets/services-marketing.jpg',
       alt: 'High end retail display',
     },
     {
@@ -86,7 +86,7 @@ export const Services: React.FC = () => {
       desc: 'A dedicated account manager for every partner. We pride ourselves on proactive communication and rapid problem resolution.',
       metricLabel: 'SUPPORT',
       metricVal: '24/7 Priority Support',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDqT_kXG-Y4zgLML4xd6GWAUc2oVkJPElsWQ_kBC2atcG7e8fvWQpgdiYM4QIp2SgHoyW4ISNgIvwyK2PGJ1WgCIPMF_IH7TPA3_-pE1eUWly1-W_J0kdyVSd4ffU2Gh5Cppf_Ztlmy7ik2Sjwecn-_EHr2__SdYT5cTQDG0Wt1Fpodqiu4puWIojGEVrPjfCNPqf_YQUkrqPRDBtf7hQU7eAcUXo9eZKz-Lu8CnZnHCYDGtN9UtdR3SGVX0vvKKMUXdhiORaf5pgk',
+      img: '/assets/services-customer-service.jpg',
       alt: 'Account support manager',
     },
   ];

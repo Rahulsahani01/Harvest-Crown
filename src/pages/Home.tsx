@@ -162,7 +162,7 @@ export const Home: React.FC = () => {
               <img 
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuABdrHjq2u1YH68Ntt4_9OdSgfpgo_qoqIBac_99XdguKmzm1TwoFzEsNfzobQUV1OeRWBrTGLOefv8yZcuPB81PFMatu4PIUI80aT6zY_dsBwpQYb2JkTrdEnuAekAKz6kXsyFsJU2Q8AWoixMeCBbGigGwWq5U5tWbgZs9NSbU6lWQ9PsYghhZpCIIARWdPkAQNfehH3-b_m-I2eikUwTlX3iL6TUMJUGUBkxQsO-g700HJRhuKmRBHoXzYnAMeUR94HyAiAt2qs" 
+                src="/assets/home-fruits.jpg" 
                 alt="Pristine Fruits assortment"
               />
             </div>
@@ -179,7 +179,7 @@ export const Home: React.FC = () => {
               <img 
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXVoR0RDHK1rOesH00M6dhfppuWgAGBpLayZ8FOWeVMMAqy5ROM_8DeAvbkwTJ9b_rcf06Wpb57zTqg95JUgA2Hp0378dTYmlXopAvvrX-FXmAsAlNADSyfQKtmHD_i5Mcx4teBisrEdaM_47i4heJQ2nIJQ8EiGWNBSsrbayb7fEpYEIz2VA0kgOS9luFZDTk2wn2T3wBzTMZjK_gRKd0Tdl0sMFmF87FyjFa8CG3M6qLuPJxNym3_EltViQu72sDKOJGJvKDpcs" 
+                src="/assets/home-vegetables.jpg" 
                 alt="Heritage Vegetables assortments"
               />
             </div>
@@ -196,7 +196,7 @@ export const Home: React.FC = () => {
               <img 
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMowOyvA2lqQB7zF1wq_Q0GvCq4VTuiXjAjuUdbLQEmKYFKaocAyoGulj0weMPz-NujQfBEc3ambUx7ApsBYtSVETjXqZdvdHKfdU802ia-aXMJVfVKtlCcXsX1kT1tRpSAT2wgnenliJBkz1blHB5vgVZvAD5NPiuIuugsf04egcvN0Df-JnR4YQG9S_XIm9fwcXVQH_ryT9cyvno0zvyaSrf5v8AXdmoGoK9GX7syshW-QANmnFbCotVKRl67LVwagJm3gM5D0I" 
+                src="/assets/home-organic.jpg" 
                 alt="Organic Essentials in sunlit greenhouse"
               />
             </div>
@@ -274,7 +274,7 @@ export const Home: React.FC = () => {
               <img 
                 loading="lazy"
                 className="w-full h-full object-cover" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQT1ANqKjigfu7AESSflYB4I4s_dymMMccfR3ACoqnTy7sLEhUfAynsw5s4-dIfuE-WUOctG_LLAe6cP0y9UCCsbcoXayP4WrY_uQiQ3SeILRIRQYhQ2lTcfMMcscJJ3uSQpTnungGcETXkY3HX4Fmw_diO5ZkomsyFdxI0i5KpGFw5sPRsPl2udKQuH5EJ2LgvZWMMWytXWM1iBusEPunhI2Q5Xozd8WWk-_4fhLRJcTnIAz3AxyIlsW5Pn7sQy3BtTfvyuAFenk" 
+                src="/assets/home-farmer.jpg" 
                 alt="Artisan farmer inspecting crop yield"
               />
             </div>

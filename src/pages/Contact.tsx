@@ -102,9 +102,9 @@ export const Contact: React.FC = () => {
             {/* Ontario Map View */}
             <div className="group relative w-full h-80 rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface-container-highest shadow-sm">
               <img 
-                alt="Ontario Location Map" 
+                alt="Corporate modern office space" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOzprTfI3jSr15N4aMKkm03FiGnKRhoHn5Fxk-ltXGQnCInKGcxwBU_uI3eqd1yKMMgnguqSOvPSQwz-1PAwhlYgrftdTIKzmNGWQgJ5tLXiSTMt61IRHG_BRkjdHvFx3MnAY0rU2ZC99ax7CrpYkbALewG56hOor4nFVVexXr_Gw2sNeP8Qs_KAKuZNkIPmi-CwPCMlDbgB0rwklvXG18p67Zvp8YEvAegHlJAB0x_5Uiu9yhC12WuidDW092hmsQNGjloXfbksw" 
+                src="/assets/contact-office-interior.jpg" 
               />
               <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/5 transition-colors"></div>
               <div className="absolute bottom-6 left-6 bg-surface p-4 rounded-xl shadow-lg border border-outline-variant/30">
