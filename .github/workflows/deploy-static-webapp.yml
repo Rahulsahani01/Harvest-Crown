@@ -55,6 +55,7 @@ jobs:
             echo "ACS_CONNECTION_STRING=${{ secrets.ACS_CONNECTION_STRING }}"
             echo "ACS_EMAIL_SENDER=${{ secrets.ACS_EMAIL_SENDER }}"
             echo "ACS_EMAIL_RECIPIENT=${{ secrets.ACS_EMAIL_RECIPIENT }}"
+            echo "VITE_WHATSAPP_NUMBER=${{ secrets.VITE_WHATSAPP_NUMBER }}"
           } > api/.env
 
       # Compile TypeScript and bundle assets via Vite
