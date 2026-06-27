@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useReveal } from '../hooks/useReveal';
 
 interface Milestone {
   year: string;
@@ -9,6 +10,7 @@ interface Milestone {
 
 export const About: React.FC = () => {
   const navigate = useNavigate();
+  const mainRef = useReveal<HTMLDivElement>('.reveal-target');
   const [activeMilestone, setActiveMilestone] = useState(0);
 
   const milestones: Milestone[] = [
@@ -30,9 +32,9 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <div className="py-8 md:py-16 animate-fadeIn">
+    <div ref={mainRef} className="py-8 md:py-16">
       {/* Hero Section */}
-      <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center mb-16 relative">
+      <section className="reveal-target px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center mb-16 relative">
         <span className="font-label-md text-label-md text-secondary uppercase tracking-widest block mb-4">Canada's Produce Partner</span>
         <h1 className="font-headline-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6 leading-tight">Our Story</h1>
         <p className="font-headline-sm text-headline-sm text-on-surface-variant max-w-2xl mx-auto italic font-medium">
@@ -41,11 +43,12 @@ export const About: React.FC = () => {
       </section>
 
       {/* Brand Story Section */}
-      <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24">
+      <section className="reveal-target px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-16 items-center">
           <div className="lg:col-span-6 relative group">
             <div className="absolute -inset-4 bg-secondary/10 rounded-lg -rotate-1 group-hover:rotate-0 transition-transform duration-500"></div>
             <img 
+              loading="lazy"
               alt="Heritage Landscape golden wheat field" 
               className="relative z-10 w-full h-[500px] object-cover rounded-lg shadow-xl grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" 
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9xUBMlOZLFgzAJF9BLw7GeCw9Mwuit4HUAh9vybng_Z4LQriKyiwyqiUgsMIzbsnMPC4GtBSVWXom909yDmKxdrt4AXZ4_5yaXTiw_H1wT-RjBju8GR3YoLjjoTYa0VzVeyOakW7DQyiGYfjNXNRt0cdGgGU5QnxhlSu8ScVV5d-hgGrDVcoVRDsbXO_7bpYRV8Y_zB8RtBtBNBYiX6JojoXDCljIkpbCrX6xScvKlE4iucNXnbFmxALuyxUCYNdkWLufTKKeyYY" 
@@ -64,7 +67,7 @@ export const About: React.FC = () => {
             <div className="mt-8">
               <button 
                 onClick={() => navigate('/products')}
-                className="bg-secondary text-white px-8 py-4 rounded-full font-button text-button hover:bg-on-secondary-fixed transition-colors cursor-pointer inline-flex items-center gap-2"
+                className="bg-secondary text-white px-8 py-4 rounded-full font-button text-button transition-transform duration-[200ms] [transition-timing-function:var(--ease-micro)] hover:bg-on-secondary-fixed hover:-translate-y-[2px] active:scale-[0.97] cursor-pointer inline-flex items-center gap-2"
               >
                 Learn More <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </button>
@@ -74,7 +77,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Mission / Vision / Values Section */}
-      <section className="bg-surface-container py-16 md:py-24 mb-24">
+      <section className="reveal-target bg-surface-container py-16 md:py-24 mb-24">
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
             {/* Mission */}
@@ -112,7 +115,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Interactive Timeline Section */}
-      <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24">
+      <section className="reveal-target px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24">
         <h2 className="font-headline-md text-headline-md text-center text-primary mb-12 font-bold">The Evolution of Excellence</h2>
         
         {/* Years selector tab navigation */}
@@ -151,7 +154,7 @@ export const About: React.FC = () => {
 
 
       {/* Standards & Accreditations */}
-      <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center mb-12">
+      <section className="reveal-target px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center mb-12">
         <p className="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-12 text-xs font-bold">
           Our Standards &amp; Accreditations
         </p>

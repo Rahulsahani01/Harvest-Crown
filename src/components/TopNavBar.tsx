@@ -43,10 +43,10 @@ export const TopNavBar: React.FC = () => {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `font-label-md text-label-md transition-colors h-full flex items-center border-b-2 ${
+                `font-label-md text-label-md transition-all duration-[200ms] [transition-timing-function:var(--ease-micro)] h-full flex items-center border-b-2 ${
                   isActive
                     ? 'text-secondary font-bold border-secondary'
-                    : 'text-on-surface-variant hover:text-secondary border-transparent'
+                    : 'text-on-surface-variant hover:text-secondary border-transparent hover:border-secondary/30'
                 }`
               }
             >
@@ -59,7 +59,7 @@ export const TopNavBar: React.FC = () => {
         <div className="hidden md:block">
           <button
             onClick={handleBecomeCustomer}
-            className="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-full font-button text-button hover:scale-105 transition-transform active:scale-95 cursor-pointer"
+            className="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-full font-button text-button transition-transform duration-[200ms] [transition-timing-function:var(--ease-micro)] hover:-translate-y-[2px] active:scale-[0.97] cursor-pointer"
           >
             Become a Customer
           </button>
@@ -103,7 +103,7 @@ export const TopNavBar: React.FC = () => {
               setIsMobileMenuOpen(false);
               handleBecomeCustomer();
             }}
-            className="w-full bg-secondary-container text-on-secondary-container px-6 py-3 rounded-full font-button text-button hover:bg-secondary-fixed transition-colors active:scale-95 cursor-pointer"
+            className="w-full bg-secondary-container text-on-secondary-container px-6 py-3 rounded-full font-button text-button transition-transform duration-[200ms] [transition-timing-function:var(--ease-micro)] active:scale-[0.97] cursor-pointer"
           >
             Become a Customer
           </button>

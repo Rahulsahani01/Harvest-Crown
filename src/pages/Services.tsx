@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useReveal } from '../hooks/useReveal';
 
 interface ServiceBlock {
   num: string;
@@ -13,7 +14,7 @@ interface ServiceBlock {
 
 export const Services: React.FC = () => {
   const navigate = useNavigate();
-  const observerRef = useRef<IntersectionObserver | null>(null);
+  const mainRef = useReveal<HTMLDivElement>('.reveal-target');
 
   const services: ServiceBlock[] = [
     {
@@ -90,32 +91,8 @@ export const Services: React.FC = () => {
     },
   ];
 
-  useEffect(() => {
-    // Setup intersection observer for scroll reveals
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-            entry.target.classList.remove('opacity-0', 'translate-y-10');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('.scroll-reveal');
-    elements.forEach((el) => {
-      observerRef.current?.observe(el);
-    });
-
-    return () => {
-      observerRef.current?.disconnect();
-    };
-  }, []);
-
   return (
-    <div className="py-8 md:py-16">
+    <div ref={mainRef} className="py-8 md:py-16">
       {/* Hero Header */}
       <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center mb-16">
         <span className="font-label-md text-label-md text-secondary tracking-widest uppercase mb-4 block">Our Operations</span>
@@ -133,7 +110,7 @@ export const Services: React.FC = () => {
           return (
             <div 
               key={service.num}
-              className={`px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center scroll-reveal transition-all duration-1000 opacity-0 translate-y-10 ${
+              className={`px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center reveal-target ${
                 isEven ? '' : 'bg-surface-container-low py-12 md:py-20 rounded-xl'
               }`}
             >
@@ -144,6 +121,7 @@ export const Services: React.FC = () => {
                 }`}
               >
                 <img 
+                  loading="lazy"
                   className="w-full h-full object-cover" 
                   src={service.img} 
                   alt={service.alt} 

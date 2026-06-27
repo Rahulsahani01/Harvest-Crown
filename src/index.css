@@ -71,6 +71,10 @@
   --font-headline-md: "Playfair Display", serif;
   --font-label-md: "DM Sans", sans-serif;
   --font-display-lg: "Playfair Display", serif;
+
+  --ease-micro: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-reveal: cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-page: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @layer utilities {
@@ -120,6 +124,46 @@
   .linen-card {
     background-color: #F5EFE6;
     border: 1px solid #D9C9B8;
+  }
+
+  .reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms var(--ease-reveal), transform 500ms var(--ease-reveal);
+  }
+  .hover-underline {
+    position: relative;
+    text-decoration: none;
+  }
+  .hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    transform-origin: bottom right;
+    transition: transform 200ms var(--ease-micro);
+  }
+  .hover-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

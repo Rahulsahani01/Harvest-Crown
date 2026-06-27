@@ -64,27 +64,27 @@ export const Footer: React.FC = () => {
             <h4 className="font-label-md text-secondary font-medium mb-6 uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-4">
               <li>
-                <Link to="/" className="text-on-surface-variant hover:text-secondary underline transition-all font-body-md">
+                <Link to="/" className="text-on-surface-variant hover:text-secondary hover-underline transition-colors font-body-md">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="text-on-surface-variant hover:text-secondary underline transition-all font-body-md">
+                <Link to="/products" className="text-on-surface-variant hover:text-secondary hover-underline transition-colors font-body-md">
                   Products
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-on-surface-variant hover:text-secondary underline transition-all font-body-md">
+                <Link to="/services" className="text-on-surface-variant hover:text-secondary hover-underline transition-colors font-body-md">
                   Services
                 </Link>
               </li>
                <li>
-                <Link to="/contact" className="text-on-surface-variant hover:text-secondary underline transition-all font-body-md">
+                <Link to="/contact" className="text-on-surface-variant hover:text-secondary hover-underline transition-colors font-body-md">
                   Contact Info
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-on-surface-variant hover:text-secondary underline transition-all font-body-md">
+                <Link to="/about" className="text-on-surface-variant hover:text-secondary hover-underline transition-colors font-body-md">
                   About Us
                 </Link>
               </li>
@@ -94,22 +94,22 @@ export const Footer: React.FC = () => {
             <h4 className="font-label-md text-secondary font-medium mb-6 uppercase tracking-wider">Support</h4>
             <ul className="space-y-4">
               <li>
-                <Link to="/contact" className="text-on-surface-variant hover:text-secondary underline transition-all font-body-md">
+                <Link to="/contact" className="text-on-surface-variant hover:text-secondary hover-underline transition-colors font-body-md">
                   Contact Info
                 </Link>
               </li>
               <li>
-                <a href="#" onClick={(e) => e.preventDefault()} className="text-on-surface-variant hover:text-secondary underline transition-all font-body-md">
+                <a href="#" onClick={(e) => e.preventDefault()} className="text-on-surface-variant hover:text-secondary hover-underline transition-colors font-body-md">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" onClick={(e) => e.preventDefault()} className="text-on-surface-variant hover:text-secondary underline transition-all font-body-md">
+                <a href="#" onClick={(e) => e.preventDefault()} className="text-on-surface-variant hover:text-secondary hover-underline transition-colors font-body-md">
                   Terms of Service
                 </a>
               </li>
               <li>
-                <Link to="/contact" className="text-on-surface-variant hover:text-secondary underline transition-all font-body-md">
+                <Link to="/contact" className="text-on-surface-variant hover:text-secondary hover-underline transition-colors font-body-md">
                   Wholesale Portal
                 </Link>
               </li>
@@ -144,7 +144,7 @@ export const Footer: React.FC = () => {
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-on-secondary-fixed transition-colors cursor-pointer flex items-center justify-center disabled:opacity-50"
+                  className="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-on-secondary-fixed transition-transform duration-[200ms] [transition-timing-function:var(--ease-micro)] hover:-translate-y-[2px] active:scale-[0.97] cursor-pointer flex items-center justify-center disabled:opacity-50"
                   aria-label="Subscribe"
                 >
                   {status === 'sending' ? (

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import productData from '../assets/productData.json';
 import { useEmail } from '../hooks/useEmail';
+import { useReveal } from '../hooks/useReveal';
 
 interface Product {
   id: number;
@@ -45,6 +46,7 @@ const getTags = (imagePath: string, name: string) => {
 
 export const Products: React.FC = () => {
   const navigate = useNavigate();
+  const mainRef = useReveal<HTMLDivElement>('.reveal-target');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [quoteForm, setQuoteForm] = useState({ name: '', email: '', qty: 'Medium (pallet)', message: '' });
   const { sendEmail, status, setStatus, errorMessage } = useEmail();
@@ -117,9 +119,9 @@ export const Products: React.FC = () => {
   };
 
   return (
-    <div className="py-8 md:py-16 animate-fadeIn">
+    <div ref={mainRef} className="py-8 md:py-16">
       {/* Header and Breadcrumbs */}
-      <header className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-left mb-12">
+      <header className="reveal-target px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-left mb-12">
         <nav className="flex items-center gap-2 mb-6 font-label-md text-label-md text-on-surface-variant">
           <Link className="hover:text-secondary transition-colors" to="/">Home</Link>
           <span className="material-symbols-outlined text-sm">chevron_right</span>
@@ -132,7 +134,7 @@ export const Products: React.FC = () => {
       </header>
 
       {/* Category Tabs */}
-      <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-10 overflow-x-auto gap-4 flex hide-scrollbar border-b border-outline-variant/30 pb-4">
+      <div className="reveal-target px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-10 overflow-x-auto gap-4 flex hide-scrollbar border-b border-outline-variant/30 pb-4">
         {['All', 'Fresh Fruits (Canada-sourced)', 'Fresh Vegetables (Canada-sourced)', 'And More'].map((category) => (
           <button
             key={category}
@@ -151,16 +153,18 @@ export const Products: React.FC = () => {
       {/* Product Grid */}
       <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-          {displayedProducts.map((prod) => {
+          {displayedProducts.map((prod, idx) => {
             const tags = getTags(prod.image, prod.name);
             const imageUrl = resolveImageUrl(prod.image);
             return (
               <div 
                 key={prod.id} 
-                className="linen-card rounded-lg overflow-hidden group hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                style={{ transitionDelay: `${(idx % 9) * 50}ms` }}
+                className="linen-card reveal-target rounded-lg overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-[300ms] [transition-timing-function:var(--ease-reveal)] flex flex-col justify-between"
               >
                 <div className="h-72 overflow-hidden relative cinematic-grain">
                   <img 
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                     src={imageUrl} 
                     alt={prod.name}
@@ -186,7 +190,7 @@ export const Products: React.FC = () => {
                     </div>
                     <button 
                       onClick={() => handleOpenQuote(prod)}
-                      className="w-full border-[1.5px] border-outline-variant hover:border-secondary hover:bg-secondary/5 py-4 rounded-full font-button text-button text-primary transition-all duration-200 cursor-pointer text-center"
+                      className="w-full border-[1.5px] border-outline-variant hover:border-secondary hover:bg-secondary/5 py-4 rounded-full font-button text-button text-primary transition-all duration-[200ms] [transition-timing-function:var(--ease-micro)] hover:-translate-y-[2px] active:scale-[0.97] cursor-pointer text-center"
                     >
                       Request a Quote
                     </button>
@@ -202,7 +206,7 @@ export const Products: React.FC = () => {
           <div className="flex justify-center mt-12">
             <button 
               onClick={handleLoadMore}
-              className="bg-secondary text-white hover:bg-on-secondary-fixed px-10 py-5 font-button text-button transition-all duration-200 cursor-pointer shadow-md active:scale-95 flex items-center gap-2 rounded-full border border-transparent"
+              className="bg-secondary text-white hover:bg-on-secondary-fixed px-10 py-5 font-button text-button transition-transform duration-[200ms] [transition-timing-function:var(--ease-micro)] hover:-translate-y-[2px] cursor-pointer shadow-md active:scale-[0.97] flex items-center gap-2 rounded-full border border-transparent"
             >
               Load More <span className="material-symbols-outlined text-lg">expand_more</span>
             </button>
@@ -211,7 +215,7 @@ export const Products: React.FC = () => {
       </section>
 
       {/* Custom Order Banner */}
-      <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
+      <section className="reveal-target px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
         <div className="h-px w-full bg-secondary-container/40 mb-12"></div>
         <div className="relative bg-primary-container rounded-xl overflow-hidden p-12 md:p-24 text-center">
           <div className="absolute inset-0 opacity-20 grain-overlay pointer-events-none"></div>
@@ -222,7 +226,7 @@ export const Products: React.FC = () => {
             </p>
             <button 
               onClick={() => navigate('/contact')}
-              className="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-full font-button text-button hover:bg-secondary-fixed transition-colors active:scale-95 cursor-pointer shadow-md"
+              className="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-full font-button text-button hover:bg-secondary-fixed transition-transform duration-[200ms] [transition-timing-function:var(--ease-micro)] hover:-translate-y-[2px] active:scale-[0.97] cursor-pointer shadow-md"
             >
               Request a Quote
             </button>

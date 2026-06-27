@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useReveal } from '../hooks/useReveal';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
+  const mainRef = useReveal<HTMLDivElement>('.reveal-target');
   const sliderRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -29,11 +31,15 @@ export const Home: React.FC = () => {
     e.preventDefault();
     const x = e.pageX - sliderRef.current.offsetLeft;
     const walk = (x - startX) * 2; // scroll speed multiplier
-    sliderRef.current.scrollLeft = scrollLeft - walk;
+    requestAnimationFrame(() => {
+      if (sliderRef.current) {
+        sliderRef.current.scrollLeft = scrollLeft - walk;
+      }
+    });
   };
 
   return (
-    <div>
+    <div ref={mainRef}>
       {/* Hero Section */}
       <section className="relative h-[921px] min-h-[600px] flex items-center overflow-hidden cinematic-grain">
         <div className="absolute inset-0">
@@ -55,7 +61,7 @@ export const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
                 onClick={() => navigate('/contact')}
-                className="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-full font-button text-button hover:bg-secondary-fixed transition-colors cursor-pointer"
+                className="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-full font-button text-button transition-transform duration-[200ms] [transition-timing-function:var(--ease-micro)] hover:bg-secondary-fixed hover:-translate-y-[2px] active:scale-[0.97] cursor-pointer"
               >
                 Request a Quote
               </button>
@@ -71,7 +77,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low border-y border-outline-variant/20 animate-fadeIn">
+      <section className="reveal-target py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low border-y border-outline-variant/20">
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
           <h2 className="font-headline-md text-headline-md mb-12">How It Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter text-left mb-6">
@@ -107,7 +113,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+      <section className="reveal-target py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
         <h2 className="font-headline-md text-headline-md mb-12">Why Canadian Retailers Choose Us</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-10 text-left">
           <div className="p-8 bg-surface-container-low border border-outline-variant/30 rounded-lg group hover:border-secondary/50 transition-colors">
@@ -140,7 +146,7 @@ export const Home: React.FC = () => {
       </div>
 
       {/* Products Snapshot */}
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <section className="reveal-target py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <div className="flex justify-between items-end mb-12">
           <h2 className="font-headline-md text-headline-md">Our Seasonal Harvest</h2>
           <Link to="/products" className="text-secondary font-button text-button border-b border-secondary hover:text-on-secondary-container transition-colors">
@@ -153,6 +159,7 @@ export const Home: React.FC = () => {
           <div className="group cursor-pointer" onClick={() => navigate('/products')}>
             <div className="aspect-[4/5] overflow-hidden rounded-lg mb-6 cinematic-grain">
               <img 
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuABdrHjq2u1YH68Ntt4_9OdSgfpgo_qoqIBac_99XdguKmzm1TwoFzEsNfzobQUV1OeRWBrTGLOefv8yZcuPB81PFMatu4PIUI80aT6zY_dsBwpQYb2JkTrdEnuAekAKz6kXsyFsJU2Q8AWoixMeCBbGigGwWq5U5tWbgZs9NSbU6lWQ9PsYghhZpCIIARWdPkAQNfehH3-b_m-I2eikUwTlX3iL6TUMJUGUBkxQsO-g700HJRhuKmRBHoXzYnAMeUR94HyAiAt2qs" 
                 alt="Pristine Fruits assortment"
@@ -169,6 +176,7 @@ export const Home: React.FC = () => {
           <div className="group cursor-pointer" onClick={() => navigate('/products')}>
             <div className="aspect-[4/5] overflow-hidden rounded-lg mb-6 cinematic-grain">
               <img 
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXVoR0RDHK1rOesH00M6dhfppuWgAGBpLayZ8FOWeVMMAqy5ROM_8DeAvbkwTJ9b_rcf06Wpb57zTqg95JUgA2Hp0378dTYmlXopAvvrX-FXmAsAlNADSyfQKtmHD_i5Mcx4teBisrEdaM_47i4heJQ2nIJQ8EiGWNBSsrbayb7fEpYEIz2VA0kgOS9luFZDTk2wn2T3wBzTMZjK_gRKd0Tdl0sMFmF87FyjFa8CG3M6qLuPJxNym3_EltViQu72sDKOJGJvKDpcs" 
                 alt="Heritage Vegetables assortments"
@@ -185,6 +193,7 @@ export const Home: React.FC = () => {
           <div className="group cursor-pointer" onClick={() => navigate('/products')}>
             <div className="aspect-[4/5] overflow-hidden rounded-lg mb-6 cinematic-grain">
               <img 
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMowOyvA2lqQB7zF1wq_Q0GvCq4VTuiXjAjuUdbLQEmKYFKaocAyoGulj0weMPz-NujQfBEc3ambUx7ApsBYtSVETjXqZdvdHKfdU802ia-aXMJVfVKtlCcXsX1kT1tRpSAT2wgnenliJBkz1blHB5vgVZvAD5NPiuIuugsf04egcvN0Df-JnR4YQG9S_XIm9fwcXVQH_ryT9cyvno0zvyaSrf5v8AXdmoGoK9GX7syshW-QANmnFbCotVKRl67LVwagJm3gM5D0I" 
                 alt="Organic Essentials in sunlit greenhouse"
@@ -205,7 +214,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Capabilities Horizontal Scroll Slider */}
-      <section className="bg-surface-container py-16 overflow-hidden">
+      <section className="reveal-target bg-surface-container py-16 overflow-hidden">
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-10">
           <h3 className="font-label-md text-label-md uppercase tracking-[0.2em] text-secondary">Our Capabilities</h3>
           <p className="text-xs text-on-surface-variant/60 mt-1 hidden md:block">Click and drag to scroll capability cards</p>
@@ -242,7 +251,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* About Snippet */}
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <section className="reveal-target py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1">
             <h2 className="font-headline-md text-headline-md mb-8">Nurturing a Legacy of Quality</h2>
@@ -262,6 +271,7 @@ export const Home: React.FC = () => {
           <div className="flex-1 w-full relative">
             <div className="aspect-square rounded-lg overflow-hidden cinematic-grain shadow-xl">
               <img 
+                loading="lazy"
                 className="w-full h-full object-cover" 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQT1ANqKjigfu7AESSflYB4I4s_dymMMccfR3ACoqnTy7sLEhUfAynsw5s4-dIfuE-WUOctG_LLAe6cP0y9UCCsbcoXayP4WrY_uQiQ3SeILRIRQYhQ2lTcfMMcscJJ3uSQpTnungGcETXkY3HX4Fmw_diO5ZkomsyFdxI0i5KpGFw5sPRsPl2udKQuH5EJ2LgvZWMMWytXWM1iBusEPunhI2Q5Xozd8WWk-_4fhLRJcTnIAz3AxyIlsW5Pn7sQy3BtTfvyuAFenk" 
                 alt="Artisan farmer inspecting crop yield"
@@ -273,7 +283,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Sustainability Band */}
-      <section className="bg-primary-container text-white py-section-gap-mobile md:py-section-gap-desktop overflow-hidden relative">
+      <section className="reveal-target bg-primary-container text-white py-section-gap-mobile md:py-section-gap-desktop overflow-hidden relative">
         <div className="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
           <span className="inline-block px-4 py-1 bg-on-primary-container/20 border border-on-primary-container/30 rounded-full font-label-md text-label-md text-primary-fixed mb-6">
             Sustainable Growth
