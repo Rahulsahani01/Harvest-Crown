@@ -305,44 +305,6 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-        <h2 className="font-headline-md text-headline-md text-center mb-16">The Verdict of the Culinary Elite</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-          {[
-            {
-              quote: "The consistency of the produce from Crown Harvest is unmatched. For a Michelin-starred kitchen, there is no alternative for quality.",
-              author: "Julian Vasseur",
-              title: "Executive Chef, L'Étoile",
-            },
-            {
-              quote: "Their cold chain reliability has fundamentally improved our waste reduction metrics. Their service is as premium as their produce.",
-              author: "Sarah Jenkins",
-              title: "Supply Director, FreshMarket Retail",
-            },
-            {
-              quote: "As a boutique distributor, we need partners who understand artisanal quality. Crown Harvest delivers exactly that, every single time.",
-              author: "Marcus Thorne",
-              title: "Founder, Thorne & Co. Wholesalers",
-            },
-          ].map((t, idx) => (
-            <div key={idx} className="p-10 bg-surface-container-low rounded-lg border border-outline-variant/20 flex flex-col justify-between hover:shadow-md transition-shadow">
-              <div>
-                <div className="flex text-secondary mb-6">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <span key={i} className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  ))}
-                </div>
-                <p className="font-body-md text-on-surface mb-8 italic leading-relaxed">"{t.quote}"</p>
-              </div>
-              <div>
-                <p className="font-bold text-on-surface">{t.author}</p>
-                <p className="text-sm text-on-surface-variant">{t.title}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Contact Strip */}
       <section className="bg-surface-variant py-8 border-y border-outline-variant/30">
@@ -350,15 +312,15 @@ export const Home: React.FC = () => {
           <div className="flex flex-wrap justify-center md:justify-start gap-12">
             <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-secondary">phone_in_talk</span>
-              <span className="font-label-md text-on-surface font-medium">+1 (800) CROWN-H</span>
+              <span className="font-label-md text-on-surface font-medium">+1 (750) 813-9422</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-secondary">mail</span>
-              <span className="font-label-md text-on-surface font-medium">partnerships@crownharvest.com</span>
+              <span className="font-label-md text-on-surface font-medium">support@crownharvestretail.com</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-secondary">location_on</span>
-              <span className="font-label-md text-on-surface font-medium">London • Singapore • New York</span>
+              <span className="font-label-md text-on-surface font-medium">Mississauga, Ontario, Canada</span>
             </div>
           </div>
           <button 

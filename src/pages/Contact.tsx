@@ -75,7 +75,7 @@ export const Contact: React.FC = () => {
                 <div>
                   <h3 className="font-label-md text-label-md text-secondary uppercase tracking-widest text-xs font-bold mb-1">Our Warehouse</h3>
                   <p className="font-body-md text-body-md text-on-surface leading-relaxed">
-                    1500 Dixie Road, Mississauga,<br />Ontario, L5E 2S2, Canada
+                    5521 Katy Gate, Mississauga,<br />Ontario, L5M 7M9, Canada
                   </p>
                 </div>
               </div>
@@ -84,7 +84,7 @@ export const Contact: React.FC = () => {
                 <span className="material-symbols-outlined text-secondary p-3 bg-surface-container-high rounded-xl text-2xl">call</span>
                 <div>
                   <h3 className="font-label-md text-label-md text-secondary uppercase tracking-widest text-xs font-bold mb-1">Phone</h3>
-                  <p className="font-body-md text-body-md text-on-surface font-semibold">+1 (800) 555-0198</p>
+                  <p className="font-body-md text-body-md text-on-surface font-semibold">+1 (750) 813-9422</p>
                   <p className="text-on-surface-variant text-xs mt-1">Mon - Fri, 8:00am - 6:00pm EST</p>
                 </div>
               </div>
@@ -93,31 +93,11 @@ export const Contact: React.FC = () => {
                 <span className="material-symbols-outlined text-secondary p-3 bg-surface-container-high rounded-xl text-2xl">mail</span>
                 <div>
                   <h3 className="font-label-md text-label-md text-secondary uppercase tracking-widest text-xs font-bold mb-1">General Inquiries</h3>
-                  <p className="font-body-md text-body-md text-on-surface">hello@crownharvest.com</p>
+                  <p className="font-body-md text-body-md text-on-surface">support@crownharvestretail.com</p>
                 </div>
               </div>
             </div>
 
-            <hr className="border-outline-variant/30" />
-
-            {/* Departmental Access */}
-            <div>
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-6">Departmental Access</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="p-6 bg-surface-container-low border border-outline-variant/40 rounded-xl space-y-1">
-                  <p className="font-label-md text-secondary text-xs uppercase tracking-wider">Wholesale Sales</p>
-                  <p className="font-body-md font-bold text-on-surface text-sm break-all">sales@crownharvest.com</p>
-                </div>
-                <div className="p-6 bg-surface-container-low border border-outline-variant/40 rounded-xl space-y-1">
-                  <p className="font-label-md text-secondary text-xs uppercase tracking-wider">Partner Support</p>
-                  <p className="font-body-md font-bold text-on-surface text-sm break-all">support@crownharvest.com</p>
-                </div>
-                <div className="p-6 bg-surface-container-low border border-outline-variant/40 rounded-xl space-y-1">
-                  <p className="font-label-md text-secondary text-xs uppercase tracking-wider">Careers</p>
-                  <p className="font-body-md font-bold text-on-surface text-sm break-all">growth@crownharvest.com</p>
-                </div>
-              </div>
-            </div>
 
             {/* Ontario Map View */}
             <div className="group relative w-full h-80 rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface-container-highest shadow-sm">
@@ -207,7 +187,7 @@ export const Contact: React.FC = () => {
                     onFocus={() => setActiveField('phone')}
                     onBlur={() => setActiveField(null)}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+1 (707) 555-0128"
+                    placeholder="+1 (750) 813-9422"
                     className="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 focus:ring-1.5 focus:ring-secondary focus:border-secondary outline-none transition-all placeholder:text-outline/40 text-sm"
                   />
                 </div>

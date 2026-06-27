@@ -149,62 +149,6 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Leadership Team Section */}
-      <section className="bg-surface-container-low py-16 md:py-24 mb-24 border-y border-outline-variant/20">
-        <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-          <div className="max-w-xl mb-16">
-            <h2 className="font-headline-md text-headline-md text-primary mb-4 font-bold">Guiding the Harvest</h2>
-            <p className="text-on-surface-variant font-body-md">Meet the leadership behind Crown Harvest's commitment to quality and transparency.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            {/* Leader 1 */}
-            <div className="group">
-              <div className="relative overflow-hidden mb-6 aspect-[3/4] rounded-lg shadow-sm">
-                <img 
-                  alt="Julian Thorne CEO" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXYulEHhqIvlaq3H9nL-vdjj1pfgXBIVXySiAOGUzaaTm8IxCns_ltDUCuJgJ4okVjUYoyK8hjVACmeuKuBxhpfNod48-nQWH2QuVctk-YVB0KtBMgQaTjpyOlgsXaRS2IaYtwVJQUCiezp6GbQxNZpifZ26imvIxyV_oAmwLpj8OGIT-3waz-VP831VtrvD8MxmUFbm22py04w1_qv_RkYvdmtyQhhyOu61wP3MdVz10dGx0M1JCMw8fQ4wu5mRBfYdfQVpucSYg" 
-                />
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-              <h4 className="font-headline-sm text-headline-sm text-primary font-bold">Julian Thorne</h4>
-              <p className="font-label-md text-label-md text-secondary uppercase mb-4 tracking-wider text-xs font-semibold">Chief Executive Officer</p>
-              <p className="text-on-surface-variant font-body-md leading-relaxed italic">"Our goal is to build the most efficient and transparent bridge between Canadian farms and grocery stores."</p>
-            </div>
-
-            {/* Leader 2 */}
-            <div className="group">
-              <div className="relative overflow-hidden mb-6 aspect-[3/4] rounded-lg shadow-sm">
-                <img 
-                  alt="Elena Rossi COO" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPlq-pfQK7yWYK1LnxN3EVdar8QVyXkhwwxkJNgJUZPmfK9pE0T-GwQ3L4cO3ZaIfiTeB9_rJHwVEowb69jXDd9AtKa3ryx8moijlnrQAisUcZrnLEg0RxRzj_OtCTcoXnDODWB97fVNokrHY3Rkls7CsscdcS1pTxtKWHuvEwxc9exMii8YIaRMg1mZVN85cYL-gohq0hYyadAe7ODhrsRd2D_rY2akoR2yuOGCOAE2Jeimh-fdkfuyluPdsFtS3UCkodUVPubec" 
-                />
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-              <h4 className="font-headline-sm text-headline-sm text-primary font-bold">Elena Rossi</h4>
-              <p className="font-label-md text-label-md text-secondary uppercase mb-4 tracking-wider text-xs font-semibold">Chief Operations Officer</p>
-              <p className="text-on-surface-variant font-body-md leading-relaxed italic">"Operational excellence is how we honour the hard work of our growers at every step of the logistics chain."</p>
-            </div>
-
-            {/* Leader 3 */}
-            <div className="group">
-              <div className="relative overflow-hidden mb-6 aspect-[3/4] rounded-lg shadow-sm">
-                <img 
-                  alt="Marcus Vance Head of Agronomy" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYJ05eArpw7oIgeatXKxIxYgppgwOgcVTtn8SMNB6kkCxoyXYa4uf7Sn1XXC4EaPEAWRXwdCFM3h1Qkh13_blvOpqzG6JIEiKeALjq2lDzC5gSIlKIeNTPD5KXkXs0wj2PrPkzBFOMGeWraWMdxUQVCx7dwCO4-DlYFilcGhYL43M4OBqRkjBf_BpfcXOHGwTE5Vx8cVTHA6m0kmY5_4mpcaPmSxZb45sTZ7nYpF94agln7HThEFtH7C7MdNv5-8DZ117-_xbwkgQ" 
-                />
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-              <h4 className="font-headline-sm text-headline-sm text-primary font-bold">Marcus Vance</h4>
-              <p className="font-label-md text-label-md text-secondary uppercase mb-4 tracking-wider text-xs font-semibold">Head of Agronomy</p>
-              <p className="text-on-surface-variant font-body-md leading-relaxed italic">"Ensuring every crop meets strict Canadian food safety and quality standards is our promise to you."</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Standards & Accreditations */}
       <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center mb-12">
